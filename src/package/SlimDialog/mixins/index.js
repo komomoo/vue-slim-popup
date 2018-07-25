@@ -1,4 +1,4 @@
-const pre = 'vue-slim-better-scroll'
+const pre = 'vue-slim-dialog'
 
 export default {
   methods: {

@@ -22,22 +22,14 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
   entry: {
-    app: './src/lib/index.js'
+    app: './src/package/index.js'
   },
   output: {
     path: config.build.assetsRoot,
-    filename: 'vue-slim-better-scroll.js',
-    library: 'vue-slim-better-scroll',
+    filename: 'vue-slim-dialog.js',
+    library: 'vue-slim-dialog',
     libraryTarget: 'umd',
     umdNamedDefine: true
-  },
-  externals : {
-    'better-scroll': {
-      root: 'BScroll',
-      commonjs: 'better-scroll',
-      commonjs2: 'better-scroll',
-      amd: 'better-scroll'
-    }
   },
   plugins: [
     new UglifyJsPlugin({
