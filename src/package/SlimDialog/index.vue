@@ -12,13 +12,17 @@
         v-show="show"
         :class="[c('__mask'), maskClass]"
         @click="maskClick"
+        @touchmove.prevent="preventDefault"
       />
     </transition>
 
     <transition :name="dialogTransition">
       <div
         v-show="show"
-        :class="[c('__dialog'), dialogClass]">
+        ref="dialog"
+        :class="[c('__dialog'), dialogClass]"
+        @touchmove.prevent="preventDefault"
+      >
         <slot/>
       </div>
     </transition>
@@ -88,6 +92,9 @@ export default {
     maskClick () {
       this.hideOnMaskClick && this.hide()
     },
+
+    // 阻止默认事件
+    preventDefault () { },
   },
 }
 </script>
@@ -105,6 +112,8 @@ $ = vue-slim-dialog
     left 0
     right 0
     background rgba(0,0,0,.6)
+    touch-action none
+    backdrop-filter: blur(5px)
   }
 
   &__dialog {
@@ -137,7 +146,7 @@ $ = vue-slim-dialog
   }
   @keyframes dialogIn {
     0% {
-      transform: scale(1.5);
+      transform: scale(1.4);
       opacity: 0;
     }
     100% {
@@ -151,7 +160,7 @@ $ = vue-slim-dialog
       opacity: 1;
     }
     100% {
-      transform: scale(0.5);
+      transform: scale(0.6);
       opacity: 0;
     }
   }
