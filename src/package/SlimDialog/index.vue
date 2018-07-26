@@ -127,7 +127,7 @@ $ = vue-slim-dialog
     width 80%
     height 200px
     background #fff
-    border-radius 4%
+    border-radius 16px
   }
 
   .slim-fade-enter-active, .slim-fade-leave-active {
