@@ -13,8 +13,7 @@ then
 
   # build
   yarn build
-  yarn build:page
-  yarn build:docs
+  yarn build:demo
 
   # commit
   npm version $VERSION --no-git-tag-version

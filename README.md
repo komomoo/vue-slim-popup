@@ -1,64 +1,49 @@
 # vue-slim-dialog
 
-> 开箱即用的/渐进式的 vue 移动端滚动组件/插件
-
-## ✨ 特性
-
-* **极简使用**
-  * 零配置/渐进式配置
-  * 自动刷新滚动高度
-* **更优性能**
-  * 使用 transform 替代 position ，下拉刷新不再掉帧
-* **更好体验**
-  * 滚动内容小于滚动视口时，也可以滚动/回弹/下拉刷新/上拉加载
-  * 多次下拉刷新节流
-  * 适配 flexible
-  * 多处细节改进
+> 开箱即用的 vue 移动端弹窗组件
 
 ## 🐠 示例&文档
 
-[Demo](https://wannaxiao.github.io/vue-slim-better-scroll/page/)
+[Demo](https://wannaxiao.github.io/vue-slim-dialog/demo/)
 
-[Demo 示例代码](https://github.com/wannaxiao/vue-slim-better-scroll/blob/master/src/App.vue)
-
-[查看文档](https://wannaxiao.github.io/vue-slim-better-scroll/docs/dist/)
+[Demo 示例代码](https://github.com/wannaxiao/vue-slim-dialog/blob/master/src/App.vue)
 
 ## 🚀 快速开始
 
-1.  安装 vue-slim-better-scroll
+1.  安装 vue-slim-dialog
 
 ```js
 // 使用yarn：
-yarn add vue-slim-better-scroll
+yarn add vue-slim-dialog
 // 或使用npm：
-npm i -S vue-slim-better-scroll
+npm i -S vue-slim-dialog
 ```
 
-2.  引入 vue-slim-better-scroll
+2.  引入 vue-slim-dialog
 
 * 插件形式全局引入
 
 ```js
 // 入口文件 main.js 中
-import Scroll from 'vue-slim-better-scroll'
-Vue.use(Scroll)
+import SlimDialog from 'vue-slim-dialog'
+Vue.use(SlimDialog)
 ```
 
 * 组件形式引入
 
 ```js
 // *.vue 中
-import Scroll from 'vue-slim-better-scroll'
+import SlimDialog from 'vue-slim-dialog'
 export default {
   /* ... */
   components: {
-    Scroll,
+    SlimDialog,
   },
   /* ... */
 }
 ```
 
-3.  使用它，请参考[Demo 示例代码](https://github.com/wannaxiao/vue-slim-better-scroll/blob/master/src/App.vue)
+3.  使用它，请参考[Demo 示例代码](https://github.com/wannaxiao/vue-slim-dialog/blob/master/src/App.vue)
 
 
 如果它对你有所帮助，可以点一下 star ～ 😊
