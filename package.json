@@ -27,6 +27,7 @@
     "build:demo": "CONFIG_ENV=demo node build/build.js",
     "dev:docs": "vuepress dev docs",
     "build:docs": "vuepress build docs",
+    "docs": "node build/bin/generate-docs",
     "release": "sh build/release.sh"
   },
   "dependencies": {},
