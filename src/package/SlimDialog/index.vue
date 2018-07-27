@@ -30,18 +30,16 @@
 </template>
 
 <script type="text/ecmascript-6">
-import Loading from './Loading'
 import mixin from './mixins'
 
 export default {
   name: 'SlimDialog',
   components: {
-    Loading,
   },
   mixins: [mixin],
   props: {
     show: {
-      // 是否显示
+      // .sync 是否显示
       type: Boolean,
       default: false,
     },
@@ -56,17 +54,17 @@ export default {
       default: 'slim-fade',
     },
     dialogTransition: {
-      // 弹窗动画
+      // 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-radius'
       type: String,
-      default: 'slim-dialog',
+      default: 'slim-scale',
     },
     maskClass: {
-      // 遮罩类
+      // 遮罩的样式类
       type: String,
       default: null,
     },
     dialogClass: {
-      // 弹窗类
+      // 弹窗的样式类
       type: String,
       default: null,
     },
@@ -126,7 +124,6 @@ $ = vue-slim-dialog
     margin auto
     width 80%
     height 200px
-    background #fff
     border-radius 16px
   }
 
@@ -138,13 +135,13 @@ $ = vue-slim-dialog
     opacity: 0
   }
 
-  .slim-dialog-enter-active {
-    animation: dialogIn .4s;
+  .slim-scale-enter-active {
+    animation: scaleIn .4s;
   }
-  .slim-dialog-leave-active {
-    animation: dialogOut .2s;
+  .slim-scale-leave-active {
+    animation: scaleOut .2s;
   }
-  @keyframes dialogIn {
+  @keyframes scaleIn {
     0% {
       transform: scale(1.4);
       opacity: 0;
@@ -154,13 +151,67 @@ $ = vue-slim-dialog
       opacity: 1;
     }
   }
-  @keyframes dialogOut {
+  @keyframes scaleOut {
     0% {
       transform: scale(1);
       opacity: 1;
     }
     100% {
       transform: scale(0.6);
+      opacity: 0;
+    }
+  }
+
+  .slim-zoom-enter-active {
+    animation: zoomIn .4s;
+  }
+  .slim-zoom-leave-active {
+    animation: zoomOut .2s;
+  }
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.6);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes zoomOut {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.6);
+      opacity: 0;
+    }
+  }
+
+  .slim-radius-enter-active {
+    animation: radiusIn .4s;
+  }
+  .slim-radius-leave-active {
+    animation: radiusOut .2s;
+  }
+  @keyframes radiusIn {
+    0% {
+      transform: scale(0)
+      border-radius 100%
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes radiusOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0)
+      border-radius 100%
       opacity: 0;
     }
   }
