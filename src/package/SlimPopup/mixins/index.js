@@ -1,4 +1,4 @@
-const pre = 'vue-slim-dialog'
+const pre = 'vue-slim-popup'
 
 export default {
   methods: {

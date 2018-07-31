@@ -1,26 +1,26 @@
 <template>
   <div id="app">
-    <button v-for="(item, index) in 3" :key="index" class="open-btn" @click="dialogShow(index)">Click Me!</button>
+    <button v-for="(item, index) in 3" :key="index" class="open-btn" @click="popupShow(index)">Click Me!</button>
 
-    <SlimDialog :show.sync="show" :dialogTransition="dialogTransition" dialogClass="dialog">
+    <SlimPopup :show.sync="show" :popupTransition="popupTransition" popupClass="popup">
       <h2>这里是一个插槽，可以放置任何元素</h2>
-      <button class="close-btn" @click="dialogHide">X</button>
-    </SlimDialog>
+      <button class="close-btn" @click="popupHide">X</button>
+    </SlimPopup>
   </div>
 </template>
 
 <script>
-import SlimDialog from './package'
+import SlimPopup from './package'
 
 export default {
   name: 'App',
   components: {
-    SlimDialog,
+    SlimPopup,
   },
   data () {
     return {
       show: false,
-      dialogTransition: '',
+      popupTransition: '',
     }
   },
   created () {
@@ -28,12 +28,12 @@ export default {
   },
   methods: {
     // 显示
-    dialogShow (index) {
-      this.dialogTransition = this.transitionList[index] // 更换动效
+    popupShow (index) {
+      this.popupTransition = this.transitionList[index] // 更换动效
       this.show = true
     },
     // 隐藏
-    dialogHide () {
+    popupHide () {
       this.show = false
     },
   },
@@ -61,7 +61,7 @@ html, body {
   overflow-y: scroll;
   box-sizing: border-box;
 
-  .dialog {
+  .popup {
     width: 80%;
     height: 200px;
     text-align: center;

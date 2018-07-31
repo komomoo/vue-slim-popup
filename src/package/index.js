@@ -1,7 +1,7 @@
-import SlimDialog from './SlimDialog'
+import SlimPopup from './SlimPopup'
 
-SlimDialog.install = function (Vue) {
-  Vue.component(SlimDialog.name, SlimDialog)
+SlimPopup.install = function (Vue) {
+  Vue.component(SlimPopup.name, SlimPopup)
 }
 
-export default SlimDialog
+export default SlimPopup

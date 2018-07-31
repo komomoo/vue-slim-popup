@@ -1,49 +1,49 @@
-# vue-slim-dialog
+# vue-slim-popup
 
 > 开箱即用的 vue 移动端弹窗组件
 
 ## 🐠 示例&文档
 
-[Demo](https://wannaxiao.github.io/vue-slim-dialog/demo/)
+[Demo](https://wannaxiao.github.io/vue-slim-popup/demo/)
 
-[Demo 示例代码](https://github.com/wannaxiao/vue-slim-dialog/blob/master/src/App.vue)
+[Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/src/App.vue)
 
 ## 🚀 快速开始
 
-1.  安装 vue-slim-dialog
+1.  安装 vue-slim-popup
 
 ```js
 // 使用yarn：
-yarn add vue-slim-dialog
+yarn add vue-slim-popup
 // 或使用npm：
-npm i -S vue-slim-dialog
+npm i -S vue-slim-popup
 ```
 
-2.  引入 vue-slim-dialog
+2.  引入 vue-slim-popup
 
 - 插件形式全局引入
 
 ```js
 // 入口文件 main.js 中
-import SlimDialog from 'vue-slim-dialog'
-Vue.use(SlimDialog)
+import SlimPopup from 'vue-slim-popup'
+Vue.use(SlimPopup)
 ```
 
 - 组件形式引入
 
 ```js
 // *.vue 中
-import SlimDialog from 'vue-slim-dialog'
+import SlimPopup from 'vue-slim-popup'
 export default {
   /* ... */
   components: {
-    SlimDialog,
+    SlimPopup,
   },
   /* ... */
 }
 ```
 
-3.  使用它，请参考[Demo 示例代码](https://github.com/wannaxiao/vue-slim-dialog/blob/master/src/App.vue)
+3.  使用它，请参考[Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/src/App.vue)
 
 ## 🔌 API
 
@@ -54,9 +54,9 @@ export default {
 | show             | .sync 是否显示                                          | Boolean | false      |
 | hideOnMaskClick  | 点击遮罩是否关闭弹窗                                    | Boolean | false      |
 | maskTransition   | 遮罩动画                                                | String  | slim-fade  |
-| dialogTransition | 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-radius' | String  | slim-scale |
+| popupTransition | 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-radius' | String  | slim-scale |
 | maskClass        | 遮罩的样式类                                            | String  | null       |
-| dialogClass      | 弹窗的样式类                                            | String  | null       |
+| popupClass      | 弹窗的样式类                                            | String  | null       |
 
 <br>
 <br>

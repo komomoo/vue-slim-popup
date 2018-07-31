@@ -1,11 +1,11 @@
 /**
- * vue-slim-dialog
+ * vue-slim-popup
  * @Author momoko
  * @Date 2018/07
  */
 
 <template>
-  <div ref="slimDialog" :class="c()">
+  <div :class="c()">
 
     <transition :name="maskTransition">
       <div
@@ -16,11 +16,11 @@
       />
     </transition>
 
-    <transition :name="dialogTransition">
+    <transition :name="popupTransition">
       <div
         v-show="show"
-        ref="dialog"
-        :class="[c('__dialog'), dialogClass]"
+        ref="popup"
+        :class="[c('__popup'), popupClass]"
         @touchmove.prevent="preventDefault"
       >
         <slot/>
@@ -33,7 +33,7 @@
 import mixin from './mixins'
 
 export default {
-  name: 'SlimDialog',
+  name: 'SlimPopup',
   components: {
   },
   mixins: [mixin],
@@ -53,7 +53,7 @@ export default {
       type: String,
       default: 'slim-fade',
     },
-    dialogTransition: {
+    popupTransition: {
       // 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-radius'
       type: String,
       default: 'slim-scale',
@@ -63,7 +63,7 @@ export default {
       type: String,
       default: null,
     },
-    dialogClass: {
+    popupClass: {
       // 弹窗的样式类
       type: String,
       default: null,
@@ -98,7 +98,7 @@ export default {
 </script>
 
 <style lang="stylus">
-$ = vue-slim-dialog
+$ = vue-slim-popup
 
 .{$} {
 
@@ -114,7 +114,7 @@ $ = vue-slim-dialog
     backdrop-filter: blur(5px)
   }
 
-  &__dialog {
+  &__popup {
     position fixed
     z-index 1000
     top 0

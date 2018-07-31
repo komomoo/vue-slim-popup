@@ -26,8 +26,8 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   output: {
     path: config.build.assetsRoot,
-    filename: 'vue-slim-dialog.js',
-    library: 'vue-slim-dialog',
+    filename: 'vue-slim-popup.js',
+    library: 'vue-slim-popup',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
