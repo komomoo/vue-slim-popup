@@ -62,3 +62,9 @@ export default {
 <br>
 <br>
 如果它对你有所帮助，可以点一下 star ～ 😊
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2018-present, momoko
