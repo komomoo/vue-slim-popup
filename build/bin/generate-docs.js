@@ -12,7 +12,7 @@ const readFile = promisify(fs.readFile)
 const appendFile = promisify(fs.appendFile)
 const stat = promisify(fs.stat)
 
-const target = path.resolve(__dirname, `../../src/package/SlimDialog/index.vue`)
+const target = path.resolve(__dirname, `../../src/package/SlimPopup/index.vue`)
 const docsPath = path.resolve(__dirname, `../../README.md`)
 
 _init()

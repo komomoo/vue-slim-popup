@@ -1,10 +1,26 @@
 <template>
   <div id="app">
-    <button v-for="(item, index) in 3" :key="index" class="open-btn" @click="popupShow(index)">Click Me!</button>
+
+    <h1>中间弹出</h1>
+
+    <div class="btn-box">
+      <button v-for="(item, index) in 4" :key="index" class="open-btn" @click="popupShow(index)">Click Me</button>
+    </div>
 
     <SlimPopup :show.sync="show" :popupTransition="popupTransition" popupClass="popup">
-      <h2>这里是一个插槽，可以放置任何元素</h2>
+      <h2 style="color: #6D7A80;">这里是一个插槽，可以放置任何元素</h2>
       <button class="close-btn" @click="popupHide">X</button>
+    </SlimPopup>
+
+    <h1>底部弹出</h1>
+
+    <div class="btn-box">
+      <button class="open-btn" @click="show2 = true">Click Me</button>
+    </div>
+
+    <SlimPopup :show.sync="show2" popupTransition="slim-slide-in-bottom" popupClass="popup" popupPosition="bottom">
+      <h2 style="color: #6D7A80;">这里是一个插槽，可以放置任何元素</h2>
+      <button class="close-btn" @click="show2 = false">X</button>
     </SlimPopup>
   </div>
 </template>
@@ -20,11 +36,12 @@ export default {
   data () {
     return {
       show: false,
+      show2: false,
       popupTransition: '',
     }
   },
   created () {
-    this.transitionList = ['slim-scale', 'slim-zoom', 'slim-radius']
+    this.transitionList = ['slim-scale', 'slim-zoom', 'slim-radius', 'slim-fade-in-bottom', 'slim-slide-in-bottom']
   },
   methods: {
     // 显示
@@ -61,9 +78,18 @@ html, body {
   overflow-y: scroll;
   box-sizing: border-box;
 
+  > h1 {
+    font-size: 24px;
+    padding: 0 15px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: #6D7A80;
+  }
+
   .popup {
     width: 80%;
     height: 200px;
+    border-radius: 16px;
     text-align: center;
     background: #fff;
     display: flex;
@@ -72,14 +98,20 @@ html, body {
     justify-content: space-around;
   }
 
-  .open-btn {
-    display block;
-    width: 200px;
-    height: 100px;
-    margin 200px auto;
-    font-size: 24px;
-    color: $baseColor;
-    background-color: $bgColor;
+  .btn-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .open-btn {
+      display: block;
+      width: 60%;
+      height: 100px;
+      margin 15px auto;
+      font-size: 24px;
+      color: $baseColor;
+      background-color: $bgColor;
+    }
   }
 
   .close-btn {

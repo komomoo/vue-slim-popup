@@ -49,14 +49,15 @@ export default {
 
 ### Props
 
-| 参数             | 说明                                                    | 类型    | 默认值     |
-| ---------------- | ------------------------------------------------------- | ------- | ---------- |
-| show             | .sync 是否显示                                          | Boolean | false      |
-| hideOnMaskClick  | 点击遮罩是否关闭弹窗                                    | Boolean | false      |
-| maskTransition   | 遮罩动画                                                | String  | slim-fade  |
-| popupTransition | 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-radius' | String  | slim-scale |
-| maskClass        | 遮罩的样式类                                            | String  | null       |
-| popupClass      | 弹窗的样式类                                            | String  | null       |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| show | .sync 是否显示 | Boolean | false |
+| hideOnMaskClick | 点击遮罩是否关闭弹窗 | Boolean | false |
+| maskTransition | 遮罩动画 | String | slim-fade |
+| popupTransition | 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-radius', 'slim-fade-in-bottom', 'slim-slide-in-bottom' | String | slim-scale |
+| maskClass | 遮罩的样式类 | String | null |
+| popupClass | 弹窗的样式类 | String | null |
+| popupPosition | 弹窗的位置，可选 'center', 'top', 'bottom' | String | center |
 
 <br>
 <br>

@@ -20,7 +20,7 @@
       <div
         v-show="show"
         ref="popup"
-        :class="[c('__popup'), popupClass]"
+        :class="[c('__popup'), c(`__popup--${popupPosition}`), popupClass]"
         @touchmove.prevent="preventDefault"
       >
         <slot/>
@@ -34,8 +34,7 @@ import mixin from './mixins'
 
 export default {
   name: 'SlimPopup',
-  components: {
-  },
+  components: {},
   mixins: [mixin],
   props: {
     show: {
@@ -54,7 +53,7 @@ export default {
       default: 'slim-fade',
     },
     popupTransition: {
-      // 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-radius'
+      // 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-radius', 'slim-fade-in-bottom', 'slim-slide-in-bottom'
       type: String,
       default: 'slim-scale',
     },
@@ -68,18 +67,21 @@ export default {
       type: String,
       default: null,
     },
+    popupPosition: {
+      // 弹窗的位置，可选 'center', 'top', 'bottom'
+      type: String,
+      default: 'center',
+    },
   },
   data () {
-    return {
-    }
+    return {}
   },
   mounted () {
     this.init()
   },
   methods: {
     // 初始化
-    init () {
-    },
+    init () {},
 
     // 隐藏
     hide () {
@@ -92,127 +94,46 @@ export default {
     },
 
     // 阻止默认事件
-    preventDefault () { },
+    preventDefault () {},
   },
 }
 </script>
 
 <style lang="stylus">
-$ = vue-slim-popup
+@import './stylus/index.stylus';
 
+$ = vue-slim-popup;
 .{$} {
-
   &__mask {
-    position fixed
-    z-index 999
-    top 0
-    bottom 0
-    left 0
-    right 0
-    background rgba(0,0,0,.6)
-    touch-action none
-    backdrop-filter: blur(5px)
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    touch-action: none;
+    backdrop-filter: blur(5px);
   }
 
   &__popup {
-    position fixed
-    z-index 1000
-    top 0
-    bottom 0
-    left 0
-    right 0
-    margin auto
-    width 80%
-    height 200px
-    border-radius 16px
-  }
+    position: fixed;
+    z-index: 1000;
+    margin: auto;
+    left: 0;
+    right: 0;
 
-  .slim-fade-enter-active, .slim-fade-leave-active {
-    opacity: 1
-    transition: opacity ease-in .2s
-  }
-  .slim-fade-enter, .slim-fade-leave-to {
-    opacity: 0
-  }
+    &--center {
+      top: 0;
+      bottom: 0;
+    }
 
-  .slim-scale-enter-active {
-    animation: scaleIn .4s;
-  }
-  .slim-scale-leave-active {
-    animation: scaleOut .2s;
-  }
-  @keyframes scaleIn {
-    0% {
-      transform: scale(1.4);
-      opacity: 0;
+    &--top {
+      top: 0;
     }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  @keyframes scaleOut {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(0.6);
-      opacity: 0;
-    }
-  }
 
-  .slim-zoom-enter-active {
-    animation: zoomIn .4s;
-  }
-  .slim-zoom-leave-active {
-    animation: zoomOut .2s;
-  }
-  @keyframes zoomIn {
-    0% {
-      transform: scale(0.6);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  @keyframes zoomOut {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(0.6);
-      opacity: 0;
-    }
-  }
-
-  .slim-radius-enter-active {
-    animation: radiusIn .4s;
-  }
-  .slim-radius-leave-active {
-    animation: radiusOut .2s;
-  }
-  @keyframes radiusIn {
-    0% {
-      transform: scale(0)
-      border-radius 100%
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @keyframes radiusOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      transform: scale(0)
-      border-radius 100%
-      opacity: 0;
+    &--bottom {
+      bottom: 0;
     }
   }
 }

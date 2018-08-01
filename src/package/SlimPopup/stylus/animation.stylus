@@ -1,0 +1,167 @@
+$ = vue-slim-popup;
+.{$} {
+  .slim-fade-enter-active, .slim-fade-leave-active {
+    opacity: 1;
+    transition: opacity ease-in 0.2s;
+  }
+
+  .slim-fade-enter, .slim-fade-leave-to {
+    opacity: 0;
+  }
+
+  .slim-scale-enter-active {
+    animation: scaleIn 0.4s;
+  }
+
+  .slim-scale-leave-active {
+    animation: scaleOut 0.2s;
+  }
+
+  @keyframes scaleIn {
+    0% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleOut {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(0.6);
+      opacity: 0;
+    }
+  }
+
+  .slim-zoom-enter-active {
+    animation: zoomIn 0.4s;
+  }
+
+  .slim-zoom-leave-active {
+    animation: zoomOut 0.2s;
+  }
+
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.6);
+      opacity: 0;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoomOut {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(0.6);
+      opacity: 0;
+    }
+  }
+
+  .slim-radius-enter-active {
+    animation: radiusIn 0.4s;
+  }
+
+  .slim-radius-leave-active {
+    animation: radiusOut 0.2s;
+  }
+
+  @keyframes radiusIn {
+    0% {
+      transform: scale(0);
+      border-radius: 100%;
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes radiusOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(0);
+      border-radius: 100%;
+      opacity: 0;
+    }
+  }
+
+  .slim-fade-in-bottom-enter-active {
+    animation: fadeInBottomIn 0.4s;
+  }
+
+  .slim-fade-in-bottom-leave-active {
+    animation: fadeInBottomOut 0.2s;
+  }
+
+  @keyframes fadeInBottomIn {
+    0% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInBottomOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+  }
+
+  .slim-slide-in-bottom-enter-active {
+    animation: slideInBottomIn 0.4s;
+  }
+
+  .slim-slide-in-bottom-leave-active {
+    animation: slideInBottomOut 0.2s;
+  }
+
+  @keyframes slideInBottomIn {
+    0% {
+      transform: translateY(100%);
+      // opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInBottomOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+}
