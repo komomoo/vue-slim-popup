@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import SlimPopup from './package'
+import SlimPopup from './lib'
 
 export default {
   name: 'App',

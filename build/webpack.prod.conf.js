@@ -22,7 +22,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
   entry: {
-    app: './src/package/index.js'
+    app: './src/lib/index.js'
   },
   output: {
     path: config.build.assetsRoot,
