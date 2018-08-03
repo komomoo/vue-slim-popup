@@ -4,10 +4,17 @@
     <h1>中间弹出</h1>
 
     <div class="btn-box">
-      <button v-for="(item, index) in 4" :key="index" class="open-btn" @click="popupShow(index)">Click Me</button>
+      <button
+        v-for="(item, index) in 4"
+        :key="index"
+        class="open-btn"
+        @click="popupShow(index)">Click Me</button>
     </div>
 
-    <SlimPopup :show.sync="show" :popupTransition="popupTransition" popupClass="popup">
+    <SlimPopup
+      :show.sync="show"
+      :popupTransition="popupTransition"
+      popupClass="popup">
       <h2 style="color: #6D7A80;">这里是一个插槽，可以放置任何元素</h2>
       <button class="close-btn" @click="popupHide">X</button>
     </SlimPopup>
@@ -18,10 +25,15 @@
       <button class="open-btn" @click="show2 = true">Click Me</button>
     </div>
 
-    <SlimPopup :show.sync="show2" popupTransition="slim-slide-in-bottom" popupClass="popup" popupPosition="bottom">
+    <SlimPopup
+      :show.sync="show2"
+      popupTransition="slim-slide-in-bottom"
+      popupClass="popup"
+      popupPosition="bottom">
       <h2 style="color: #6D7A80;">这里是一个插槽，可以放置任何元素</h2>
       <button class="close-btn" @click="show2 = false">X</button>
     </SlimPopup>
+
   </div>
 </template>
 
@@ -107,7 +119,7 @@ html, body {
       display: block;
       width: 60%;
       height: 100px;
-      margin 15px auto;
+      margin: 15px auto;
       font-size: 24px;
       color: $baseColor;
       background-color: $bgColor;
