@@ -44,6 +44,11 @@ export default {
 ```
 
 3.  使用它，请参考[Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/src/App.vue)
+```html
+  <SlimPopup :show.sync="show">
+    <!-- 这里是一个插槽，可以放置任何元素 -->
+  </SlimPopup>
+```
 
 ## 🔌 API
 
