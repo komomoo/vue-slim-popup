@@ -11,6 +11,7 @@
       <div
         v-show="show"
         :class="[c('__mask'), maskClass]"
+        :style="maskStyle"
         @click="maskClick"
         @touchmove.prevent="preventDefault"
       />
@@ -21,6 +22,7 @@
         v-show="show"
         ref="popup"
         :class="[c('__popup'), c(`__popup--${popupPosition}`), popupClass]"
+        :style="popupStyle"
         @touchmove.prevent="preventDefault"
       >
         <slot/>
@@ -65,6 +67,16 @@ export default {
     popupClass: {
       // 弹窗的样式类
       type: String,
+      default: null,
+    },
+    maskStyle: {
+      // 遮罩的样式
+      type: Object,
+      default: null,
+    },
+    popupStyle: {
+      // 弹窗的样式
+      type: Object,
       default: null,
     },
     popupPosition: {

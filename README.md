@@ -62,6 +62,8 @@ export default {
 | popupTransition | 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-radius', 'slim-fade-in-bottom', 'slim-slide-in-bottom' | String | slim-scale |
 | maskClass | 遮罩的样式类 | String | null |
 | popupClass | 弹窗的样式类 | String | null |
+| maskStyle | 遮罩的样式 | Object | null |
+| popupStyle | 弹窗的样式 | Object | null |
 | popupPosition | 弹窗的位置，可选 'center', 'top', 'bottom' | String | center |
 
 <br>
