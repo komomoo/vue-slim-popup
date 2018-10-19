@@ -73,38 +73,6 @@ $ = vue-slim-popup;
     }
   }
 
-  .slim-radius-enter-active {
-    animation: radiusIn 0.4s;
-  }
-
-  .slim-radius-leave-active {
-    animation: radiusOut 0.2s;
-  }
-
-  @keyframes radiusIn {
-    0% {
-      transform: scale(0);
-      border-radius: 100%;
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes radiusOut {
-    0% {
-      opacity: 1;
-    }
-
-    100% {
-      transform: scale(0);
-      border-radius: 100%;
-      opacity: 0;
-    }
-  }
-
   .slim-fade-in-bottom-enter-active {
     animation: fadeInBottomIn 0.4s;
   }

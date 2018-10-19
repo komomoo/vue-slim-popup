@@ -53,7 +53,7 @@ export default {
     }
   },
   created () {
-    this.transitionList = ['slim-scale', 'slim-zoom', 'slim-radius', 'slim-fade-in-bottom', 'slim-slide-in-bottom']
+    this.transitionList = ['slim-scale', 'slim-zoom', 'slim-fade-in-bottom', 'slim-slide-in-bottom']
   },
   methods: {
     // 显示
