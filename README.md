@@ -73,6 +73,20 @@ export default {
 <br>
 如果它对你有所帮助，可以点一下 star ～ 😊
 
+## 📝 更新日志
+
+### v1.3.0
+
+* 更好的滚动穿透控制。增加 props preventMaskTouchmove & preventPopupTouchmove & preventBodyScroll
+
+### v1.2.0
+
+* props popupClass & maskClass 类型由 String 变为 Array
+
+### v1.1.0
+
+* 移除 slim-radius 动画
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
