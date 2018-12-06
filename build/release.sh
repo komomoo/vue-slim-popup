@@ -29,6 +29,6 @@ then
   git checkout master
 
   # publish
-  npm whoami
-  npm publish
+  # npm whoami
+  # npm publish
 fi

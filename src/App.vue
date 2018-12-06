@@ -14,7 +14,7 @@
     <SlimPopup
       :show.sync="show"
       :popupTransition="popupTransition"
-      popupClass="popup">
+      :popupClass="['popup']">
       <h2 style="color: #6D7A80;">这里是一个插槽，可以放置任何元素</h2>
       <button class="close-btn" @click="popupHide">X</button>
     </SlimPopup>
@@ -27,11 +27,54 @@
 
     <SlimPopup
       :show.sync="show2"
+      :popupClass="['popup']"
       popupTransition="slim-slide-in-bottom"
-      popupClass="popup"
       popupPosition="bottom">
       <h2 style="color: #6D7A80;">这里是一个插槽，可以放置任何元素</h2>
       <button class="close-btn" @click="show2 = false">X</button>
+    </SlimPopup>
+
+    <h1>关闭阻止滚动穿透</h1>
+
+    <div class="btn-box">
+      <button class="open-btn" @click="show3 = true">Click Me</button>
+    </div>
+
+    <SlimPopup
+      :show.sync="show3"
+      :preventPopupTouchmove="false"
+      :popupClass="['popup scroll']">
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <button class="close-btn" @click="show3 = false">X</button>
+    </SlimPopup>
+
+    <h1>开启阻止 body 滚动</h1>
+
+    <div class="btn-box">
+      <button class="open-btn" @click="show4 = true">Click Me</button>
+    </div>
+
+    <SlimPopup
+      :show.sync="show4"
+      :preventPopupTouchmove="false"
+      :preventBodyScroll="true"
+      :popupClass="['popup scroll']">
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <h2 style="color: #6D7A80;">滚动元素</h2>
+      <button class="close-btn" @click="show4 = false">X</button>
     </SlimPopup>
 
   </div>
@@ -49,6 +92,8 @@ export default {
     return {
       show: false,
       show2: false,
+      show3: false,
+      show4: false,
       popupTransition: '',
     }
   },
@@ -108,6 +153,22 @@ html, body {
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
+
+    &.scroll {
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .close-btn {
+      font-size: 20px;
+      font-weight: 500;
+      color: $baseColor;
+      background-color: $bgColor;
+      text-align: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 4px;
+    }
   }
 
   .btn-box {
@@ -124,17 +185,6 @@ html, body {
       color: $baseColor;
       background-color: $bgColor;
     }
-  }
-
-  .close-btn {
-    font-size: 20px;
-    font-weight: 500;
-    color: $baseColor;
-    background-color: $bgColor;
-    text-align: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 4px;
   }
 }
 </style>

@@ -10,21 +10,19 @@
     <transition :name="maskTransition">
       <div
         v-show="show"
-        :class="[c('__mask'), maskClass]"
+        :class="[c('__mask'), ...maskClass]"
         :style="maskStyle"
         @click="maskClick"
-        @touchmove.prevent="preventDefault"
-      />
+        @touchmove="preventDefault($event, 'Mask')"/>
     </transition>
 
     <transition :name="popupTransition">
       <div
         v-show="show"
         ref="popup"
-        :class="[c('__popup'), c(`__popup--${popupPosition}`), popupClass]"
+        :class="[c('__popup'), c(`__popup--${popupPosition}`), ...popupClass]"
         :style="popupStyle"
-        @touchmove.prevent="preventDefault"
-      >
+        @touchmove="preventDefault($event, 'Popup')">
         <slot/>
       </div>
     </transition>
@@ -33,6 +31,27 @@
 
 <script type="text/ecmascript-6">
 import mixin from './mixins'
+
+/**
+ * 阻止滚动穿透
+ * @param {Boolean} isPrevent 是否阻止
+ */
+const preventRollingThrough = (() => {
+  let scrollTop
+  return (isPrevent = true) => {
+    if (isPrevent) {
+      scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+      // position fixed会使滚动位置丢失，所以利用top定位
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollTop}px`
+    } else {
+      // 恢复时，需要还原之前的滚动位置
+      document.body.style.position = 'static'
+      document.body.style.top = '0px'
+      window.scrollTo(0, scrollTop)
+    }
+  }
+})()
 
 export default {
   name: 'SlimPopup',
@@ -55,18 +74,18 @@ export default {
       default: 'slim-fade',
     },
     popupTransition: {
-      // 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-radius', 'slim-fade-in-bottom', 'slim-slide-in-bottom'
+      // 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-fade-in-bottom', 'slim-slide-in-bottom'
       type: String,
       default: 'slim-scale',
     },
     maskClass: {
       // 遮罩的样式类
-      type: String,
+      type: Array,
       default: null,
     },
     popupClass: {
       // 弹窗的样式类
-      type: String,
+      type: Array,
       default: null,
     },
     maskStyle: {
@@ -84,9 +103,31 @@ export default {
       type: String,
       default: 'center',
     },
+    preventMaskTouchmove: {
+      // 阻止遮罩 touchmove 事件，阻止移动端滚动穿透
+      type: Boolean,
+      default: true,
+    },
+    preventPopupTouchmove: {
+      // 阻止弹窗 touchmove 事件，阻止移动端滚动穿透（同时会导致弹窗区域无法滚动）
+      type: Boolean,
+      default: true,
+    },
+    preventBodyScroll: {
+      // 阻止 body 滚动，以间接的阻止滚动穿透（不会影响弹窗区域滚动）。开启此选项，关闭 preventPopupTouchmove，可达到弹窗区域可滚动，同时阻止滚动穿透的效果
+      type: Boolean,
+      default: false,
+    },
   },
   data () {
     return {}
+  },
+  watch: {
+    show (val) {
+      if (this.preventBodyScroll) {
+        val ? preventRollingThrough(true) : preventRollingThrough(false)
+      }
+    },
   },
   mounted () {
     this.init()
@@ -106,7 +147,12 @@ export default {
     },
 
     // 阻止默认事件
-    preventDefault () {},
+    preventDefault (e, type) {
+      if (this[`prevent${type}Touchmove`]) e.preventDefault()
+    },
+
+    // 阻止滚动穿透
+    preventRollingThrough,
   },
 }
 </script>

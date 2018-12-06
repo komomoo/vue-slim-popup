@@ -60,11 +60,14 @@ export default {
 | hideOnMaskClick | 点击遮罩是否关闭弹窗 | Boolean | false |
 | maskTransition | 遮罩动画 | String | slim-fade |
 | popupTransition | 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-fade-in-bottom', 'slim-slide-in-bottom' | String | slim-scale |
-| maskClass | 遮罩的样式类 | String | null |
-| popupClass | 弹窗的样式类 | String | null |
+| maskClass | 遮罩的样式类 | Array | null |
+| popupClass | 弹窗的样式类 | Array | null |
 | maskStyle | 遮罩的样式 | Object | null |
 | popupStyle | 弹窗的样式 | Object | null |
 | popupPosition | 弹窗的位置，可选 'center', 'top', 'bottom' | String | center |
+| preventMaskTouchmove | 阻止遮罩 touchmove 事件，阻止移动端滚动穿透 | Boolean | true |
+| preventPopupTouchmove | 阻止弹窗 touchmove 事件，阻止移动端滚动穿透（同时会导致弹窗区域无法滚动） | Boolean | true |
+| preventBodyScroll | 阻止 body 滚动，以间接的阻止滚动穿透（不会影响弹窗区域滚动）。开启此选项，关闭 preventPopupTouchmove，可达到弹窗区域可滚动，同时阻止滚动穿透的效果 | Boolean | false |
 
 <br>
 <br>
