@@ -76,6 +76,10 @@ export default {
 
 ## 📝 更新日志
 
+### v1.3.2
+
+* 增加 props forceRenderOnShow
+
 ### v1.3.0
 
 * 更好的滚动穿透控制。增加 props preventMaskTouchmove & preventPopupTouchmove & preventBodyScroll
