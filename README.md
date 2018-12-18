@@ -58,6 +58,7 @@ export default {
 | --- | --- | --- | --- |
 | show | .sync 是否显示 | Boolean | false |
 | hideOnMaskClick | 点击遮罩是否关闭弹窗 | Boolean | false |
+| forceRenderOnShow | 显示的时候是否重新渲染 | Boolean | false |
 | maskTransition | 遮罩动画 | String | slim-fade |
 | popupTransition | 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-fade-in-bottom', 'slim-slide-in-bottom' | String | slim-scale |
 | maskClass | 遮罩的样式类 | Array | null |

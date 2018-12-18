@@ -23,7 +23,7 @@
         :class="[c('__popup'), c(`__popup--${popupPosition}`), ...popupClass]"
         :style="popupStyle"
         @touchmove="preventDefault($event, 'Popup')">
-        <slot/>
+        <slot v-if="popupBodyRenderState"/>
       </div>
     </transition>
   </div>
@@ -65,6 +65,11 @@ export default {
     },
     hideOnMaskClick: {
       // 点击遮罩是否关闭弹窗
+      type: Boolean,
+      default: false,
+    },
+    forceRenderOnShow: {
+      // 显示的时候是否重新渲染
       type: Boolean,
       default: false,
     },
@@ -120,13 +125,21 @@ export default {
     },
   },
   data () {
-    return {}
+    return {
+      popupBodyRenderState: true, // 弹窗内容渲染状态
+    }
   },
   watch: {
-    show (val) {
-      if (this.preventBodyScroll) {
-        val ? preventRollingThrough(true) : preventRollingThrough(false)
+    async show (val) {
+      // forceRenderOnShow
+      if (this.forceRenderOnShow && val) {
+        this.popupBodyRenderState = false
+        await this.$nextTick()
+        this.popupBodyRenderState = true
       }
+
+      // preventBodyScroll
+      if (this.preventBodyScroll) val ? preventRollingThrough(true) : preventRollingThrough(false)
     },
   },
   mounted () {
