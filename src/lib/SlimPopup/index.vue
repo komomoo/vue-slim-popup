@@ -43,6 +43,9 @@ const preventRollingThrough = (() => {
       scrollTop = document.body.scrollTop || document.documentElement.scrollTop
       // position fixed会使滚动位置丢失，所以利用top定位
       document.body.style.position = 'fixed'
+      document.body.style.left = 0
+      document.body.style.right = 0
+      document.body.margin = 'auto'
       document.body.style.top = `-${scrollTop}px`
     } else {
       // 恢复时，需要还原之前的滚动位置
