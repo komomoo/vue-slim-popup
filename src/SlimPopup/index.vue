@@ -174,7 +174,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import './stylus/index.stylus';
+@import './stylus/index.styl';
 
 $ = vue-slim-popup;
 .{$} {
