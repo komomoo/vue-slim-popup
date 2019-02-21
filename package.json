@@ -95,8 +95,10 @@
   ],
   "eslintConfig": {
     "extends": [
-      "@momoko/base/vue"
+      "@momoko/vue"
     ]
+  },
+    "@momoko/eslint-config-vue": "^0.1.5",
     "standard-version": "^4.4.0"
   }
 }
