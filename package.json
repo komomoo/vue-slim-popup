@@ -97,5 +97,6 @@
     "extends": [
       "@momoko/base/vue"
     ]
+    "standard-version": "^4.4.0"
   }
 }
