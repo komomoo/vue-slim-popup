@@ -98,6 +98,12 @@
       "@momoko/vue"
     ]
   },
+  "babel": {
+    "presets": [
+      "@momoko/vue"
+    ]
+  },
+    "@momoko/babel-preset-vue": "^0.1.1",
     "@momoko/eslint-config-vue": "^0.1.5",
     "standard-version": "^4.4.0"
   }
