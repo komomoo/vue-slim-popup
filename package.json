@@ -98,6 +98,9 @@
       "@momoko/vue"
     ]
   },
+  "eslintIgnore": [
+    "dist"
+  ],
   "babel": {
     "presets": [
       "@momoko/vue"
