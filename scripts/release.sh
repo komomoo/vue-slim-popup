@@ -16,7 +16,8 @@ git merge master
 git checkout master
 
 # push
-git push --tags --all origin
+git push --tags origin
+git push --all origin
 
 # publish
 npm publish --registry=https://registry.npmjs.org
