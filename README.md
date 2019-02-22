@@ -4,9 +4,9 @@
 
 ## 🐠 示例&文档
 
-[Demo](https://wannaxiao.github.io/vue-slim-popup/demo/)
+[Demo](https://wannaxiao.github.io/vue-slim-popup/demo/dist/)
 
-[Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/src/App.vue)
+[Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
 
 ## 🚀 快速开始
 
@@ -21,16 +21,6 @@ npm i -S vue-slim-popup
 
 2.  引入 vue-slim-popup
 
-- 插件形式全局引入
-
-```js
-// 入口文件 main.js 中
-import SlimPopup from 'vue-slim-popup'
-Vue.use(SlimPopup)
-```
-
-- 组件形式引入
-
 ```js
 // *.vue 中
 import SlimPopup from 'vue-slim-popup'
@@ -43,7 +33,7 @@ export default {
 }
 ```
 
-3.  使用它，请参考[Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/src/App.vue)
+3.  使用它，请参考[Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
 ```html
   <SlimPopup :show.sync="show">
     <!-- 这里是一个插槽，可以放置任何元素 -->
