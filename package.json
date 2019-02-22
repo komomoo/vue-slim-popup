@@ -21,7 +21,7 @@
   "module": "dist/vue-slim-popup.esm.min.js",
   "scripts": {
     "dev": "parcel demo/index.html -p 8080 --out-dir demo/dist",
-    "build:demo": "parcel build demo/index.html --out-dir demo/dist",
+    "build:demo": "rm -rf demo/dist/ && parcel build demo/index.html --out-dir demo/dist",
     "build": "dio",
     "lint": "eslint --fix --ext .js,.vue .",
     "docs:dev": "vuepress dev docs",
