@@ -12,11 +12,8 @@
 
 1.  安装 vue-slim-popup
 
-```js
-// 使用yarn：
-yarn add vue-slim-popup
-// 或使用npm：
-npm i -S vue-slim-popup
+```bash
+yarn add vue-slim-popup # 或 npm i -S vue-slim-popup
 ```
 
 2.  引入 vue-slim-popup
