@@ -23,4 +23,4 @@ function n(n,t,o,r,e,i,u){try{var c=n[i](u),v=c.value}catch(a){return void o(a)}
 },{"../src":"2u/B"}],"epB2":[function(require,module,exports) {
 "use strict";var e=r(require("vue")),u=r(require("./App"));function r(e){return e&&e.__esModule?e:{default:e}}e.default.config.productionTip=!0,new e.default({render:function(e){return e(u.default)}}).$mount("#app");
 },{"vue":"QPfz","./App":"Js2s"}]},{},["epB2"], null)
-//# sourceMappingURL=/main.613103dd.map
+//# sourceMappingURL=main.613103dd.map
