@@ -6,14 +6,13 @@
 
 <template>
   <div :class="c()">
-
     <transition :name="maskTransition">
       <div
         v-show="show"
         :class="[c('__mask'), ...maskClass]"
         :style="maskStyle"
         @click="maskClick"
-        @touchmove="preventDefault($event, 'Mask')"/>
+        @touchmove="preventDefault($event, 'Mask')" />
     </transition>
 
     <transition :name="popupTransition">
@@ -23,7 +22,7 @@
         :class="[c('__popup'), c(`__popup--${popupPosition}`), ...popupClass]"
         :style="popupStyle"
         @touchmove="preventDefault($event, 'Popup')">
-        <slot v-if="popupBodyRenderState"/>
+        <slot v-if="popupBodyRenderState" />
       </div>
     </transition>
   </div>

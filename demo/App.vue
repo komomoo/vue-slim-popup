@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <h1>中间弹出</h1>
 
     <div class="btn-box">
@@ -8,13 +7,15 @@
         v-for="(item, index) in 4"
         :key="index"
         class="open-btn"
-        @click="popupShow(index)">Click Me</button>
+        @click="popupShow(index)">
+        Click Me
+      </button>
     </div>
 
     <SlimPopup
       :show.sync="show"
-      :popupTransition="popupTransition"
-      :popupClass="['popup']">
+      :popup-transition="popupTransition"
+      :popup-class="['popup']">
       <h2 style="color: #6D7A80;">这里是一个插槽，可以放置任何元素</h2>
       <button class="close-btn" @click="popupHide">X</button>
     </SlimPopup>
@@ -27,9 +28,9 @@
 
     <SlimPopup
       :show.sync="show2"
-      :popupClass="['popup']"
-      popupTransition="slim-slide-in-bottom"
-      popupPosition="bottom">
+      :popup-class="['popup']"
+      popup-transition="slim-slide-in-bottom"
+      popup-position="bottom">
       <h2 style="color: #6D7A80;">这里是一个插槽，可以放置任何元素</h2>
       <button class="close-btn" @click="show2 = false">X</button>
     </SlimPopup>
@@ -42,8 +43,8 @@
 
     <SlimPopup
       :show.sync="show3"
-      :preventPopupTouchmove="false"
-      :popupClass="['popup scroll']">
+      :prevent-popup-touchmove="false"
+      :popup-class="['popup scroll']">
       <h2 style="color: #6D7A80;">滚动元素</h2>
       <h2 style="color: #6D7A80;">滚动元素</h2>
       <h2 style="color: #6D7A80;">滚动元素</h2>
@@ -63,9 +64,9 @@
 
     <SlimPopup
       :show.sync="show4"
-      :preventPopupTouchmove="false"
-      :preventBodyScroll="true"
-      :popupClass="['popup scroll']">
+      :prevent-popup-touchmove="false"
+      :prevent-body-scroll="true"
+      :popup-class="['popup scroll']">
       <h2 style="color: #6D7A80;">滚动元素</h2>
       <h2 style="color: #6D7A80;">滚动元素</h2>
       <h2 style="color: #6D7A80;">滚动元素</h2>
@@ -76,12 +77,11 @@
       <h2 style="color: #6D7A80;">滚动元素</h2>
       <button class="close-btn" @click="show4 = false">X</button>
     </SlimPopup>
-
   </div>
 </template>
 
 <script>
-import SlimPopup from './lib'
+import SlimPopup from '../src'
 
 export default {
   name: 'App',

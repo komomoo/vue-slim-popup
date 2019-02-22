@@ -20,9 +20,9 @@
   "main": "dist/vue-slim-popup.min.js",
   "module": "dist/vue-slim-popup.esm.min.js",
   "scripts": {
-    "dev": "",
+    "dev": "parcel demo/index.html -p 8080 --out-dir demo/dist",
+    "build:demo": "parcel build demo/index.html --out-dir demo/dist",
     "build": "dio",
-    "build:demo": "",
     "lint": "eslint --fix --ext .js,.vue .",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
@@ -49,9 +49,14 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.3.3",
     "@momoko/babel-preset-vue": "^0.2.0",
-    "@momoko/eslint-config-vue": "^0.2.0",
-    "dio-bundler": "^0.1.0",
-    "standard-version": "^4.4.0"
+    "@momoko/eslint-config-vue": "^0.2.2",
+    "dio-bundler": "^0.1.1",
+    "parcel-bundler": "^1.11.0",
+    "standard-version": "^4.4.0",
+    "vue": "^2.6.7",
+    "vue-hot-reload-api": "^2.3.2",
+    "vue-template-compiler": "^2.6.7"
   }
 }
