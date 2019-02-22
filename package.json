@@ -1,7 +1,7 @@
 {
   "name": "vue-slim-popup",
   "version": "1.3.3",
-  "description": "开箱即用的 vue 移动端弹窗组件",
+  "description": "💇 开箱即用的 vue 移动端弹窗组件",
   "author": "momoko <ko.momo@qq.com>",
   "license": "MIT",
   "private": false,
