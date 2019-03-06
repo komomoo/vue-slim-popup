@@ -27,7 +27,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:gen": "node scripts/docs-generate",
-    "release": "sh scripts/release"
+    "release": "sh scripts/release.sh"
   },
   "eslintConfig": {
     "extends": [
