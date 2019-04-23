@@ -1,135 +1,112 @@
-$ = vue-slim-popup;
+$ = vue-slim-popup
 .{$} {
+  /* slim-fade */
   .slim-fade-enter-active, .slim-fade-leave-active {
-    opacity: 1;
-    transition: opacity ease-in 0.2s;
+    opacity 1
+    transition opacity ease-in 0.2s
   }
 
   .slim-fade-enter, .slim-fade-leave-to {
-    opacity: 0;
+    opacity 0
   }
 
-  .slim-scale-enter-active {
-    animation: scaleIn 0.4s;
+  /* slim-scale-center */
+  .slim-scale-center-enter-active {
+    animation scaleIn 0.4s
   }
 
-  .slim-scale-leave-active {
-    animation: scaleOut 0.2s;
+  .slim-scale-center-leave-active {
+    animation scaleOut 0.2s
   }
 
   @keyframes scaleIn {
     0% {
-      transform: scale(1.4);
-      opacity: 0;
+      transform scale(1.4) translate3d(-50%, -50%, 0)
+      opacity 0
     }
 
     100% {
-      transform: scale(1);
-      opacity: 1;
+      transform scale(1) translate3d(-50%, -50%, 0)
+      opacity 1
     }
   }
 
   @keyframes scaleOut {
     0% {
-      transform: scale(1);
-      opacity: 1;
+      transform scale(1) translate3d(-50%, -50%, 0)
+      opacity 1
     }
 
     100% {
-      transform: scale(0.6);
-      opacity: 0;
+      transform scale(0.6) translate3d(-50%, -50%, 0)
+      opacity 0
     }
   }
 
-  .slim-zoom-enter-active {
-    animation: zoomIn 0.4s;
+  /* slim-zoom-center */
+  .slim-zoom-center-enter-active {
+    opacity 1
+    transition all ease 0.4s
   }
 
-  .slim-zoom-leave-active {
-    animation: zoomOut 0.2s;
+  .slim-zoom-center-leave-active {
+    opacity 1
+    transition all ease 0.2s
   }
 
-  @keyframes zoomIn {
-    0% {
-      transform: scale(0.6);
-      opacity: 0;
-    }
-
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
+  .slim-zoom-center-enter, .slim-zoom-center-leave-to {
+    transform scale(0.6) translate3d(-50%, -50%, 0)
+    opacity 0
   }
 
-  @keyframes zoomOut {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-
-    100% {
-      transform: scale(0.6);
-      opacity: 0;
-    }
+  /* slim-slide */
+  .slim-slide-top-enter-active, .slim-slide-bottom-enter-active, .slim-slide-left-enter-active, .slim-slide-right-enter-active {
+    opacity 1
+    transition all ease 0.4s
   }
 
-  .slim-fade-in-bottom-enter-active {
-    animation: fadeInBottomIn 0.4s;
+  .slim-slide-top-leave-active, .slim-slide-bottom-leave-active, .slim-slide-left-leave-active, .slim-slide-right-leave-active {
+    opacity 1
+    transition all ease 0.2s
   }
 
-  .slim-fade-in-bottom-leave-active {
-    animation: fadeInBottomOut 0.2s;
+  .slim-slide-top-enter {
+    transform translate3d(-50%, -100%, 0)
+    opacity 1
   }
 
-  @keyframes fadeInBottomIn {
-    0% {
-      transform: translateY(50%);
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
+  .slim-slide-top-leave-to {
+    transform translate3d(-50%, -100%, 0)
+    opacity 0
   }
 
-  @keyframes fadeInBottomOut {
-    0% {
-      opacity: 1;
-    }
-
-    100% {
-      transform: translateY(50%);
-      opacity: 0;
-    }
+  .slim-slide-bottom-enter {
+    transform translate3d(-50%, 100%, 0)
+    opacity 1
   }
 
-  .slim-slide-in-bottom-enter-active {
-    animation: slideInBottomIn 0.4s;
+  .slim-slide-bottom-leave-to {
+    transform translate3d(-50%, 100%, 0)
+    opacity 0
   }
 
-  .slim-slide-in-bottom-leave-active {
-    animation: slideInBottomOut 0.2s;
+  .slim-slide-left-enter {
+    transform translate3d(-100%, -50%, 0)
+    opacity 1
   }
 
-  @keyframes slideInBottomIn {
-    0% {
-      transform: translateY(100%);
-      // opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
+  .slim-slide-left-leave-to {
+    transform translate3d(-100%, -50%, 0)
+    opacity 0
   }
 
-  @keyframes slideInBottomOut {
-    0% {
-      opacity: 1;
-    }
+  .slim-slide-right-enter {
+    transform translate3d(100%, -50%, 0)
+    opacity 1
+  }
 
-    100% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
+  .slim-slide-right-leave-to {
+    transform translate3d(100%, -50%, 0)
+    opacity 0
   }
 }
