@@ -15,7 +15,7 @@
         @touchmove="preventDefault($event, 'Mask')" />
     </transition>
 
-    <transition :name="popupTransition">
+    <transition :name="popupTransition || (popupPosition === 'center'? 'slim-scale-center': `slim-slide-${popupPosition}`)">
       <div
         v-show="show"
         ref="popup"
@@ -81,9 +81,9 @@ export default {
       default: 'slim-fade',
     },
     popupTransition: {
-      // 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-fade-in-bottom', 'slim-slide-in-bottom'
+      // 弹窗动画，内置 'slim-scale-center', 'slim-zoom-center', 'slim-slide-top', 'slim-slide-bottom', 'slim-slide-left', 'slim-slide-right'。为空则根据 popupPosition 选用默认动画
       type: String,
-      default: 'slim-scale',
+      default: null,
     },
     maskClass: {
       // 遮罩的样式类
@@ -96,17 +96,17 @@ export default {
       default: null,
     },
     maskStyle: {
-      // 遮罩的样式
+      // 遮罩样式
       type: Object,
       default: null,
     },
     popupStyle: {
-      // 弹窗的样式
+      // 弹窗样式
       type: Object,
       default: null,
     },
     popupPosition: {
-      // 弹窗的位置，可选 'center', 'top', 'bottom'
+      // 弹窗位置，可选 'center', 'top', 'bottom', 'left', 'right'
       type: String,
       default: 'center',
     },
@@ -173,40 +173,66 @@ export default {
 </script>
 
 <style lang="stylus">
-@import './stylus/index.styl';
+@import './stylus/index.styl'
 
-$ = vue-slim-popup;
+$ = vue-slim-popup
 .{$} {
   &__mask {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.6);
-    touch-action: none;
-    backdrop-filter: blur(5px);
+    position fixed
+    z-index 999
+    top 0
+    bottom 0
+    left 0
+    right 0
+    background rgba(0, 0, 0, 0.6)
+    touch-action none
+    backdrop-filter blur(5px)
   }
 
   &__popup {
-    position: fixed;
-    z-index: 1000;
-    margin: auto;
-    left: 0;
-    right: 0;
+    position fixed
+    z-index 1000
+    margin auto
 
     &--center {
-      top: 0;
-      bottom: 0;
+      top 50%
+      right auto
+      bottom auto
+      left 50%
+      transform translate3d(-50%, -50%, 0)
+      transform-origin left top
     }
 
     &--top {
-      top: 0;
+      top 0
+      bottom auto
+      left 50%
+      right auto
+      transform translate3d(-50%, 0, 0)
     }
 
     &--bottom {
-      bottom: 0;
+      top auto
+      bottom 0
+      left 50%
+      right auto
+      transform translate3d(-50%, 0, 0)
+    }
+
+    &--left {
+      top 50%
+      bottom auto
+      left 0
+      right auto
+      transform translate3d(0, -50%, 0)
+    }
+
+    &--right {
+      top 50%
+      bottom auto
+      left auto
+      right 0
+      transform translate3d(0, -50%, 0)
     }
   }
 }
