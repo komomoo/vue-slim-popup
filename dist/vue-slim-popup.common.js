@@ -1,5 +1,5 @@
 /**
- * vue-slim-popup v1.3.3
+ * vue-slim-popup v1.4.0
  * Copyright (c) 2018-present, momoko <ko.momo@qq.com>
  * Released under the MIT License.
  */
@@ -872,9 +872,9 @@ var script = {
       default: 'slim-fade'
     },
     popupTransition: {
-      // 弹窗动画，内置 'slim-scale', 'slim-zoom', 'slim-fade-in-bottom', 'slim-slide-in-bottom'
+      // 弹窗动画，内置 'slim-scale-center', 'slim-zoom-center', 'slim-slide-top', 'slim-slide-bottom', 'slim-slide-left', 'slim-slide-right'。为空则根据 popupPosition 选用默认动画
       type: String,
-      default: 'slim-scale'
+      default: null
     },
     maskClass: {
       // 遮罩的样式类
@@ -887,17 +887,17 @@ var script = {
       default: null
     },
     maskStyle: {
-      // 遮罩的样式
+      // 遮罩样式
       type: Object,
       default: null
     },
     popupStyle: {
-      // 弹窗的样式
+      // 弹窗样式
       type: Object,
       default: null
     },
     popupPosition: {
-      // 弹窗的位置，可选 'center', 'top', 'bottom'
+      // 弹窗位置，可选 'center', 'top', 'bottom', 'left', 'right'
       type: String,
       default: 'center'
     },
@@ -1125,13 +1125,13 @@ var browser = createInjector;
 const __vue_script__ = script;
 
 /* template */
-var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.c()},[_c('transition',{attrs:{"name":_vm.maskTransition}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.show),expression:"show"}],class:[_vm.c('__mask') ].concat( _vm.maskClass),style:(_vm.maskStyle),on:{"click":_vm.maskClick,"touchmove":function($event){return _vm.preventDefault($event, 'Mask')}}})]),_vm._v(" "),_c('transition',{attrs:{"name":_vm.popupTransition}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.show),expression:"show"}],ref:"popup",class:[_vm.c('__popup'), _vm.c(("__popup--" + _vm.popupPosition)) ].concat( _vm.popupClass),style:(_vm.popupStyle),on:{"touchmove":function($event){return _vm.preventDefault($event, 'Popup')}}},[(_vm.popupBodyRenderState)?_vm._t("default"):_vm._e()],2)])],1)};
+var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.c()},[_c('transition',{attrs:{"name":_vm.maskTransition}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.show),expression:"show"}],class:[_vm.c('__mask') ].concat( _vm.maskClass),style:(_vm.maskStyle),on:{"click":_vm.maskClick,"touchmove":function($event){return _vm.preventDefault($event, 'Mask')}}})]),_vm._v(" "),_c('transition',{attrs:{"name":_vm.popupTransition || (_vm.popupPosition === 'center'? 'slim-scale-center': ("slim-slide-" + _vm.popupPosition))}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.show),expression:"show"}],ref:"popup",class:[_vm.c('__popup'), _vm.c(("__popup--" + _vm.popupPosition)) ].concat( _vm.popupClass),style:(_vm.popupStyle),on:{"touchmove":function($event){return _vm.preventDefault($event, 'Popup')}}},[(_vm.popupBodyRenderState)?_vm._t("default"):_vm._e()],2)])],1)};
 var __vue_staticRenderFns__ = [];
 
   /* style */
   const __vue_inject_styles__ = function (inject) {
     if (!inject) return
-    inject("data-v-78edbf2b_0", { source: ".vue-slim-popup .slim-fade-enter-active,.vue-slim-popup .slim-fade-leave-active{opacity:1;transition:opacity ease-in .2s}.vue-slim-popup .slim-fade-enter,.vue-slim-popup .slim-fade-leave-to{opacity:0}.vue-slim-popup .slim-scale-enter-active{animation:scaleIn .4s}.vue-slim-popup .slim-scale-leave-active{animation:scaleOut .2s}.vue-slim-popup .slim-zoom-enter-active{animation:zoomIn .4s}.vue-slim-popup .slim-zoom-leave-active{animation:zoomOut .2s}.vue-slim-popup .slim-fade-in-bottom-enter-active{animation:fadeInBottomIn .4s}.vue-slim-popup .slim-fade-in-bottom-leave-active{animation:fadeInBottomOut .2s}.vue-slim-popup .slim-slide-in-bottom-enter-active{animation:slideInBottomIn .4s}.vue-slim-popup .slim-slide-in-bottom-leave-active{animation:slideInBottomOut .2s}@-moz-keyframes scaleIn{0%{transform:scale(1.4);opacity:0}100%{transform:scale(1);opacity:1}}@-webkit-keyframes scaleIn{0%{transform:scale(1.4);opacity:0}100%{transform:scale(1);opacity:1}}@-o-keyframes scaleIn{0%{transform:scale(1.4);opacity:0}100%{transform:scale(1);opacity:1}}@keyframes scaleIn{0%{transform:scale(1.4);opacity:0}100%{transform:scale(1);opacity:1}}@-moz-keyframes scaleOut{0%{transform:scale(1);opacity:1}100%{transform:scale(.6);opacity:0}}@-webkit-keyframes scaleOut{0%{transform:scale(1);opacity:1}100%{transform:scale(.6);opacity:0}}@-o-keyframes scaleOut{0%{transform:scale(1);opacity:1}100%{transform:scale(.6);opacity:0}}@keyframes scaleOut{0%{transform:scale(1);opacity:1}100%{transform:scale(.6);opacity:0}}@-moz-keyframes zoomIn{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}@-webkit-keyframes zoomIn{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}@-o-keyframes zoomIn{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}@keyframes zoomIn{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}@-moz-keyframes zoomOut{0%{transform:scale(1);opacity:1}100%{transform:scale(.6);opacity:0}}@-webkit-keyframes zoomOut{0%{transform:scale(1);opacity:1}100%{transform:scale(.6);opacity:0}}@-o-keyframes zoomOut{0%{transform:scale(1);opacity:1}100%{transform:scale(.6);opacity:0}}@keyframes zoomOut{0%{transform:scale(1);opacity:1}100%{transform:scale(.6);opacity:0}}@-moz-keyframes fadeInBottomIn{0%{transform:translateY(50%);opacity:0}100%{opacity:1}}@-webkit-keyframes fadeInBottomIn{0%{transform:translateY(50%);opacity:0}100%{opacity:1}}@-o-keyframes fadeInBottomIn{0%{transform:translateY(50%);opacity:0}100%{opacity:1}}@keyframes fadeInBottomIn{0%{transform:translateY(50%);opacity:0}100%{opacity:1}}@-moz-keyframes fadeInBottomOut{0%{opacity:1}100%{transform:translateY(50%);opacity:0}}@-webkit-keyframes fadeInBottomOut{0%{opacity:1}100%{transform:translateY(50%);opacity:0}}@-o-keyframes fadeInBottomOut{0%{opacity:1}100%{transform:translateY(50%);opacity:0}}@keyframes fadeInBottomOut{0%{opacity:1}100%{transform:translateY(50%);opacity:0}}@-moz-keyframes slideInBottomIn{0%{transform:translateY(100%)}100%{opacity:1}}@-webkit-keyframes slideInBottomIn{0%{transform:translateY(100%)}100%{opacity:1}}@-o-keyframes slideInBottomIn{0%{transform:translateY(100%)}100%{opacity:1}}@keyframes slideInBottomIn{0%{transform:translateY(100%)}100%{opacity:1}}@-moz-keyframes slideInBottomOut{0%{opacity:1}100%{transform:translateY(100%);opacity:0}}@-webkit-keyframes slideInBottomOut{0%{opacity:1}100%{transform:translateY(100%);opacity:0}}@-o-keyframes slideInBottomOut{0%{opacity:1}100%{transform:translateY(100%);opacity:0}}@keyframes slideInBottomOut{0%{opacity:1}100%{transform:translateY(100%);opacity:0}}.vue-slim-popup__mask{position:fixed;z-index:999;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);touch-action:none;backdrop-filter:blur(5px)}.vue-slim-popup__popup{position:fixed;z-index:1000;margin:auto;left:0;right:0}.vue-slim-popup__popup--center{top:0;bottom:0}.vue-slim-popup__popup--top{top:0}.vue-slim-popup__popup--bottom{bottom:0}", map: undefined, media: undefined });
+    inject("data-v-06690f8e_0", { source: ".vue-slim-popup .slim-fade-enter-active,.vue-slim-popup .slim-fade-leave-active{opacity:1;transition:opacity ease-in .2s}.vue-slim-popup .slim-fade-enter,.vue-slim-popup .slim-fade-leave-to{opacity:0}.vue-slim-popup .slim-scale-center-enter-active{animation:scaleIn .4s}.vue-slim-popup .slim-scale-center-leave-active{animation:scaleOut .2s}.vue-slim-popup .slim-zoom-center-enter-active{opacity:1;transition:all ease .4s}.vue-slim-popup .slim-zoom-center-leave-active{opacity:1;transition:all ease .2s}.vue-slim-popup .slim-zoom-center-enter,.vue-slim-popup .slim-zoom-center-leave-to{transform:scale(.6) translate3d(-50%,-50%,0);opacity:0}.vue-slim-popup .slim-slide-bottom-enter-active,.vue-slim-popup .slim-slide-left-enter-active,.vue-slim-popup .slim-slide-right-enter-active,.vue-slim-popup .slim-slide-top-enter-active{opacity:1;transition:all ease .4s}.vue-slim-popup .slim-slide-bottom-leave-active,.vue-slim-popup .slim-slide-left-leave-active,.vue-slim-popup .slim-slide-right-leave-active,.vue-slim-popup .slim-slide-top-leave-active{opacity:1;transition:all ease .2s}.vue-slim-popup .slim-slide-top-enter{transform:translate3d(-50%,-100%,0);opacity:1}.vue-slim-popup .slim-slide-top-leave-to{transform:translate3d(-50%,-100%,0);opacity:0}.vue-slim-popup .slim-slide-bottom-enter{transform:translate3d(-50%,100%,0);opacity:1}.vue-slim-popup .slim-slide-bottom-leave-to{transform:translate3d(-50%,100%,0);opacity:0}.vue-slim-popup .slim-slide-left-enter{transform:translate3d(-100%,-50%,0);opacity:1}.vue-slim-popup .slim-slide-left-leave-to{transform:translate3d(-100%,-50%,0);opacity:0}.vue-slim-popup .slim-slide-right-enter{transform:translate3d(100%,-50%,0);opacity:1}.vue-slim-popup .slim-slide-right-leave-to{transform:translate3d(100%,-50%,0);opacity:0}@-moz-keyframes scaleIn{0%{transform:scale(1.4) translate3d(-50%,-50%,0);opacity:0}100%{transform:scale(1) translate3d(-50%,-50%,0);opacity:1}}@-webkit-keyframes scaleIn{0%{transform:scale(1.4) translate3d(-50%,-50%,0);opacity:0}100%{transform:scale(1) translate3d(-50%,-50%,0);opacity:1}}@-o-keyframes scaleIn{0%{transform:scale(1.4) translate3d(-50%,-50%,0);opacity:0}100%{transform:scale(1) translate3d(-50%,-50%,0);opacity:1}}@keyframes scaleIn{0%{transform:scale(1.4) translate3d(-50%,-50%,0);opacity:0}100%{transform:scale(1) translate3d(-50%,-50%,0);opacity:1}}@-moz-keyframes scaleOut{0%{transform:scale(1) translate3d(-50%,-50%,0);opacity:1}100%{transform:scale(.6) translate3d(-50%,-50%,0);opacity:0}}@-webkit-keyframes scaleOut{0%{transform:scale(1) translate3d(-50%,-50%,0);opacity:1}100%{transform:scale(.6) translate3d(-50%,-50%,0);opacity:0}}@-o-keyframes scaleOut{0%{transform:scale(1) translate3d(-50%,-50%,0);opacity:1}100%{transform:scale(.6) translate3d(-50%,-50%,0);opacity:0}}@keyframes scaleOut{0%{transform:scale(1) translate3d(-50%,-50%,0);opacity:1}100%{transform:scale(.6) translate3d(-50%,-50%,0);opacity:0}}.vue-slim-popup__mask{position:fixed;z-index:999;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);touch-action:none;backdrop-filter:blur(5px)}.vue-slim-popup__popup{position:fixed;z-index:1000;margin:auto}.vue-slim-popup__popup--center{top:50%;right:auto;bottom:auto;left:50%;transform:translate3d(-50%,-50%,0);transform-origin:left top}.vue-slim-popup__popup--top{top:0;bottom:auto;left:50%;right:auto;transform:translate3d(-50%,0,0)}.vue-slim-popup__popup--bottom{top:auto;bottom:0;left:50%;right:auto;transform:translate3d(-50%,0,0)}.vue-slim-popup__popup--left{top:50%;bottom:auto;left:0;right:auto;transform:translate3d(0,-50%,0)}.vue-slim-popup__popup--right{top:50%;bottom:auto;left:auto;right:0;transform:translate3d(0,-50%,0)}", map: undefined, media: undefined });
 
   };
   /* scoped */
