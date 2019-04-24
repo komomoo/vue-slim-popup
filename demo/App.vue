@@ -59,6 +59,29 @@
       <h2 style="color: #6D7A80;">滚动元素</h2>
       <button class="close-btn" @click="scrollShow = false">X</button>
     </SlimPopup>
+
+    <h1>弹窗叠加</h1>
+
+    <div class="btn-box">
+      <button @click="stackShow = true"> Stack </button>
+    </div>
+
+    <SlimPopup
+      :show.sync="stackShow"
+      :popup-class="['popup']"
+      @maskClick="log('Mask被点击')"
+      @popupClick="log('Popup自身被点击')">
+      <h2 style="color: #6D7A80;">Popup1</h2>
+      <button class="open-btn" @click="stackShow2 = true">Open Popup2</button>
+      <button class="close-btn" @click="stackShow = false">X</button>
+    </SlimPopup>
+    <SlimPopup
+      :show.sync="stackShow2"
+      popup-transition="slim-zoom-center"
+      :popup-class="['popup']">
+      <h2 style="color: #6D7A80;">Popup2</h2>
+      <button class="close-btn" @click="stackShow2 = false">X</button>
+    </SlimPopup>
   </div>
 </template>
 
@@ -77,7 +100,14 @@ export default {
       positionShow: false,
       position: 'top',
       scrollShow: false,
+      stackShow: false,
+      stackShow2: false,
     }
+  },
+  methods: {
+    log (msg) {
+      console.log(msg)
+    },
   },
 }
 </script>
@@ -113,7 +143,7 @@ html, body {
 
   .popup {
     width 80%
-    height 200px
+    min-height 200px
     border-radius 16px
     text-align center
     background #fff
@@ -123,11 +153,12 @@ html, body {
     justify-content space-around
 
     &.scroll {
+      height 200px
       overflow-y scroll
       -webkit-overflow-scrolling touch
     }
 
-    .close-btn {
+    .open-btn, .close-btn {
       font-size 20px
       font-weight 500
       color $baseColor
@@ -136,6 +167,11 @@ html, body {
       width 50px
       height 50px
       border-radius 4px
+    }
+
+    .open-btn {
+      width 140px
+      height 80px
     }
   }
 
