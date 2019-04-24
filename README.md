@@ -57,6 +57,13 @@ export default {
 | preventPopupTouchmove | 阻止弹窗 touchmove 事件，阻止移动端滚动穿透（同时会导致弹窗区域无法滚动） | Boolean | true |
 | preventBodyScroll | 阻止 body 滚动，以间接的阻止滚动穿透（不会影响弹窗区域滚动）。开启此选项，关闭 preventPopupTouchmove，可达到弹窗区域可滚动，同时阻止滚动穿透的效果 | Boolean | false |
 
+### Events
+事件名 | 说明 | 回调参数 |
+|---|---|---|
+maskClick | 遮罩区域被点击时 | undefined |
+popupClick | 弹窗区域自身被点击时 | undefined |
+
+
 <br>
 <br>
 😉😘 如果它对你有所帮助，可以点一下 <b>⭐️<a href="#">Star</a></b> ~

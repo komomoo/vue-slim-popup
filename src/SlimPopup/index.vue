@@ -21,6 +21,7 @@
         ref="popup"
         :class="[c('__popup'), c(`__popup--${popupPosition}`), ...popupClass]"
         :style="popupStyle"
+        @click.self="popupClick"
         @touchmove="preventDefault($event, 'Popup')">
         <slot v-if="popupBodyRenderState" />
       </div>
@@ -158,7 +159,13 @@ export default {
 
     // 遮罩点击 handle
     maskClick () {
+      this.$emit('maskClick')
       this.hideOnMaskClick && this.hide()
+    },
+
+    // 弹窗点击 handle
+    popupClick () {
+      this.$emit('popupClick')
     },
 
     // 阻止默认事件
