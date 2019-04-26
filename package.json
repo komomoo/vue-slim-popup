@@ -1,6 +1,6 @@
 {
   "name": "vue-slim-popup",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "💇 开箱即用的 vue 移动端弹窗组件",
   "author": "momoko <ko.momo@qq.com>",
   "license": "MIT",
@@ -52,7 +52,7 @@
     "@babel/core": "^7.3.3",
     "@momoko/babel-preset-vue": "^0.2.0",
     "@momoko/eslint-config-vue": "^0.2.2",
-    "dio-bundler": "^0.1.1",
+    "dio-bundler": "^0.3.0",
     "parcel-bundler": "^1.11.0",
     "standard-version": "^4.4.0",
     "vue": "^2.6.7",
