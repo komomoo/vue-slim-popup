@@ -2256,7 +2256,7 @@ cssnano@^3.4.0:
     postcss-value-parser "^3.2.3"
     postcss-zindex "^2.0.1"
 
-cssnano@^4.0.0, cssnano@^4.1.10, cssnano@^4.1.8:
+cssnano@^4.0.0, cssnano@^4.1.8:
   version "4.1.10"
   resolved "https://registry.npmjs.org/cssnano/-/cssnano-4.1.10.tgz#0ac41f0b13d13d465487e111b778d42da631b8b2"
   integrity sha512-5wny+F6H4/8RgNlaqab4ktc3e0/blKutmq8yNlBFXA//nSFFAqAngjNVRzUvCgYROULmZZUoosL/KSoZo5aUaQ==
@@ -2443,33 +2443,13 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
-dio-bundler@/Users/momoko/momo/D/A/Github/dio:
-  version "0.2.0"
+dio-bundler@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.npm.taobao.org/dio-bundler/download/dio-bundler-0.3.0.tgz#c5dfb0331eb2e9678a4601f4988af6c9b924ef6b"
+  integrity sha1-xd+wMx6y6WeKRgH0mIr2ybkk72s=
   dependencies:
     "@babel/core" "^7.3.3"
     autoprefixer "^9.5.1"
-    cssnano "^4.1.10"
-    lodash "^4.17.11"
-    ora "^3.1.0"
-    postcss "^7.0.14"
-    rollup "^1.2.1"
-    rollup-plugin-babel "^4.3.2"
-    rollup-plugin-commonjs "^9.2.0"
-    rollup-plugin-json "^3.1.0"
-    rollup-plugin-node-resolve "^4.0.0"
-    rollup-plugin-postcss "^2.0.3"
-    rollup-plugin-url "^2.2.0"
-    rollup-plugin-vue "^4.7.1"
-    stylus "^0.54.5"
-    terser "^3.16.1"
-    yargs "^13.2.1"
-
-"dio-bundler@file:../dio":
-  version "0.2.0"
-  dependencies:
-    "@babel/core" "^7.3.3"
-    autoprefixer "^9.5.1"
-    cssnano "^4.1.10"
     lodash "^4.17.11"
     ora "^3.1.0"
     postcss "^7.0.14"
