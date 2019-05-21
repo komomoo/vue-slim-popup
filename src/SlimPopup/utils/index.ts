@@ -7,8 +7,8 @@
  * @param {Number} time
  * @returns
  */
-export function timeout (time) {
-  return new Promise(resolve => {
+export function timeout (time: number): Promise<void> {
+  return new Promise((resolve): void => {
     setTimeout(resolve, time)
   })
 }
