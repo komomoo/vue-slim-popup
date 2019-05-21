@@ -2,11 +2,19 @@
 
 > 开箱即用的 vue 移动端弹窗组件
 
+## ✨ 特性
+
+- 开箱即用/极简使用
+- 弹窗体自适应高度
+- 优雅动画
+- 移动端滚动穿透双解决方案
+- typescript 支持
+
 ## 🐠 示例&文档
 
 [Demo](https://wannaxiao.github.io/vue-slim-popup/demo/dist/)
 
-[Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
+[Demo 源码](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
 
 ## 🚀 快速开始
 
@@ -30,7 +38,7 @@ export default {
 }
 ```
 
-3.  使用它，请参考[Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
+3.  使用它，请参考[Demo 源码](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
 ```html
   <SlimPopup :show.sync="show">
     <!-- 这里是一个插槽，可以放置任何元素 -->
