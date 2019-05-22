@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Watch, Emit, Vue, Mixins } from 'vue-property-decorator'
+import { Component, Prop, Watch, Emit, Mixins } from 'vue-property-decorator'
 import c from './mixins'
 
 /**

@@ -1,6 +1,6 @@
 import SlimPopup from './SlimPopup/index.vue'
 
-SlimPopup.install = function (Vue) {
+SlimPopup.install = function (Vue): void {
   Vue.component(SlimPopup.name, SlimPopup)
 }
 

@@ -893,19 +893,19 @@
     eslint-plugin-promise "^4.1.1"
     eslint-plugin-standard "^4.0.0"
 
-"@momoko/eslint-config-ts-vue@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npm.taobao.org/@momoko/eslint-config-ts-vue/download/@momoko/eslint-config-ts-vue-1.0.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40momoko%2Feslint-config-ts-vue%2Fdownload%2F%40momoko%2Feslint-config-ts-vue-1.0.1.tgz#29d21cdc6f6b9eeddae9ed356c918114206b9b84"
-  integrity sha1-KdIc3G9rnu3a6e01bJGBFCBrm4Q=
+"@momoko/eslint-config-ts-vue@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/@momoko/eslint-config-ts-vue/download/@momoko/eslint-config-ts-vue-1.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40momoko%2Feslint-config-ts-vue%2Fdownload%2F%40momoko%2Feslint-config-ts-vue-1.1.0.tgz#6ff98c93e6a2eadd561f582ddb771a166a4832e4"
+  integrity sha1-b/mMk+ai6t1WH1gt23caFmpIMuQ=
   dependencies:
     "@momoko/eslint-config-js" "^1.0.1"
-    "@momoko/eslint-config-ts" "^1.0.2"
+    "@momoko/eslint-config-ts" "^1.1.0"
     "@momoko/eslint-config-vue" "^1.0.1"
 
-"@momoko/eslint-config-ts@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/@momoko/eslint-config-ts/download/@momoko/eslint-config-ts-1.0.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40momoko%2Feslint-config-ts%2Fdownload%2F%40momoko%2Feslint-config-ts-1.0.2.tgz#d8a79dbff777eb9503a8e3eea4dfa0c65640ae45"
-  integrity sha1-2Kedv/d365UDqOPupN+gxlZArkU=
+"@momoko/eslint-config-ts@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/@momoko/eslint-config-ts/download/@momoko/eslint-config-ts-1.1.0.tgz#de42d86329930919a160279468f5abda1e196832"
+  integrity sha1-3kLYYymTCRmhYCeUaPWr2h4ZaDI=
   dependencies:
     "@momoko/eslint-config-js" "^1.0.1"
     "@typescript-eslint/eslint-plugin" "^1.7.0"
