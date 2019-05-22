@@ -29,7 +29,8 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script lang="ts">
+import { Component, Prop, Watch, Vue } from 'vue-property-decorator'
 import mixin from './mixins'
 
 /**
@@ -56,126 +57,36 @@ const preventRollingThrough = (() => {
   }
 })()
 
-export default {
-  name: 'SlimPopup',
-  components: {},
-  mixins: [mixin],
-  props: {
-    show: {
-      // .sync 是否显示
-      type: Boolean,
-      default: false,
-    },
-    hideOnMaskClick: {
-      // 点击遮罩是否关闭弹窗
-      type: Boolean,
-      default: false,
-    },
-    forceRenderOnShow: {
-      // 显示的时候是否重新渲染
-      type: Boolean,
-      default: false,
-    },
-    maskTransition: {
-      // 遮罩动画
-      type: String,
-      default: 'slim-fade',
-    },
-    popupTransition: {
-      // 弹窗动画，内置 'slim-scale-center', 'slim-zoom-center', 'slim-slide-top', 'slim-slide-bottom', 'slim-slide-left', 'slim-slide-right'。为空则根据 popupPosition 选用默认动画
-      type: String,
-      default: null,
-    },
-    maskClass: {
-      // 遮罩的样式类
-      type: Array,
-      default: null,
-    },
-    popupClass: {
-      // 弹窗的样式类
-      type: Array,
-      default: null,
-    },
-    maskStyle: {
-      // 遮罩样式
-      type: Object,
-      default: null,
-    },
-    popupStyle: {
-      // 弹窗样式
-      type: Object,
-      default: null,
-    },
-    popupPosition: {
-      // 弹窗位置，可选 'center', 'top', 'bottom', 'left', 'right'
-      type: String,
-      default: 'center',
-    },
-    preventMaskTouchmove: {
-      // 阻止遮罩 touchmove 事件，阻止移动端滚动穿透
-      type: Boolean,
-      default: true,
-    },
-    preventPopupTouchmove: {
-      // 阻止弹窗 touchmove 事件，阻止移动端滚动穿透（同时会导致弹窗区域无法滚动）
-      type: Boolean,
-      default: true,
-    },
-    preventBodyScroll: {
-      // 阻止 body 滚动，以间接的阻止滚动穿透（不会影响弹窗区域滚动）。开启此选项，关闭 preventPopupTouchmove，可达到弹窗区域可滚动，同时阻止滚动穿透的效果
-      type: Boolean,
-      default: false,
-    },
-  },
-  data () {
-    return {
-      popupBodyRenderState: true, // 弹窗内容渲染状态
+@Component
+export default class SlimPopup extends Vue {
+  @Prop({ default: false }) private show!: boolean // .sync 是否显示
+  @Prop({ default: false }) private hideOnMaskClick!: boolean // 点击遮罩是否关闭弹窗
+  @Prop({ default: false }) private forceRenderOnShow!: boolean // 显示的时候是否重新渲染
+  @Prop({ default: true }) private preventMaskTouchmove!: boolean // 阻止遮罩 touchmove 事件，阻止移动端滚动穿透
+  @Prop({ default: true }) private preventPopupTouchmove!: boolean // 阻止弹窗 touchmove 事件，阻止移动端滚动穿透（同时会导致弹窗区域无法滚动）
+  @Prop({ default: false }) private preventBodyScroll!: boolean // 阻止 body 滚动，以间接的阻止滚动穿透（不会影响弹窗区域滚动）。开启此选项，关闭 preventPopupTouchmove，可达到弹窗区域可滚动，同时阻止滚动穿透的效果
+  @Prop({ default: 'slim-fade' }) private maskTransition!: string // 遮罩动画
+  @Prop({ default: null }) private popupTransition!: string // 弹窗动画，内置 'slim-scale-center', 'slim-zoom-center', 'slim-slide-top', 'slim-slide-bottom', 'slim-slide-left', 'slim-slide-right'。为空则根据 popupPosition 选用默认动画
+  @Prop({ default: 'center' }) private popupPosition!: string // 弹窗位置，可选 'center', 'top', 'bottom', 'left', 'right'
+  @Prop({ default: null }) private maskClass!: string[] // 遮罩的样式类
+  @Prop({ default: null }) private popupClass!: string[] // 弹窗的样式类
+  @Prop({ default: null }) private maskStyle!: Record<string, any> // 遮罩样式
+  @Prop({ default: null }) private popupStyle!: Record<string, any> // 弹窗样式
+
+  popupBodyRenderState: boolean = true // 弹窗内容渲染状态
+
+  @Watch('show')
+  async onShowChanged (val) {
+    // forceRenderOnShow
+    if (this.forceRenderOnShow && val) {
+      this.popupBodyRenderState = false
+      await this.$nextTick()
+      this.popupBodyRenderState = true
     }
-  },
-  watch: {
-    async show (val) {
-      // forceRenderOnShow
-      if (this.forceRenderOnShow && val) {
-        this.popupBodyRenderState = false
-        await this.$nextTick()
-        this.popupBodyRenderState = true
-      }
 
-      // preventBodyScroll
-      if (this.preventBodyScroll) val ? preventRollingThrough(true) : preventRollingThrough(false)
-    },
-  },
-  mounted () {
-    this.init()
-  },
-  methods: {
-    // 初始化
-    init () {},
-
-    // 隐藏
-    hide () {
-      this.$emit('update:show', false)
-    },
-
-    // 遮罩点击 handle
-    maskClick () {
-      this.$emit('maskClick')
-      this.hideOnMaskClick && this.hide()
-    },
-
-    // 弹窗点击 handle
-    popupClick () {
-      this.$emit('popupClick')
-    },
-
-    // 阻止默认事件
-    preventDefault (e, type) {
-      if (this[`prevent${type}Touchmove`]) e.preventDefault()
-    },
-
-    // 阻止滚动穿透
-    preventRollingThrough,
-  },
+    // preventBodyScroll
+    if (this.preventBodyScroll) val ? preventRollingThrough(true) : preventRollingThrough(false)
+  }
 }
 </script>
 
