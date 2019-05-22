@@ -47,19 +47,29 @@
     "Android >= 4.4",
     "IE >= 9"
   ],
+  "dioConfig": {
+    "input": "src/index.ts",
+    "external": [
+      "vue",
+      "vue-class-component",
+      "vue-property-decorator"
+    ]
+  },
+  "dependencies": {
+    "vue-class-component": "^7.1.0",
+    "vue-property-decorator": "^8.1.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.3.3",
-    "@momoko/babel-preset-vue": "^0.2.0",
+    "@momoko/babel-preset-vue": "^1.0.0",
     "@momoko/eslint-config-ts-vue": "^1.1.0",
-    "dio-bundler": "^0.3.1",
+    "dio-bundler": "^0.4.0",
     "eslint": "^5.16.0",
     "parcel-bundler": "^1.11.0",
     "standard-version": "^4.4.0",
     "typescript": "^3.4.5",
     "vue": "^2.6.10",
-    "vue-class-component": "^7.1.0",
     "vue-hot-reload-api": "^2.3.2",
-    "vue-property-decorator": "^8.1.1",
     "vue-template-compiler": "^2.6.10"
   }
 }
