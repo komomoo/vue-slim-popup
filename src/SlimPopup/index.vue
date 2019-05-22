@@ -30,8 +30,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Watch, Vue } from 'vue-property-decorator'
-import mixin from './mixins'
+import { Component, Prop, Watch, Emit, Vue, Mixins } from 'vue-property-decorator'
+import c from './mixins'
 
 /**
  * 阻止滚动穿透
@@ -44,21 +44,21 @@ const preventRollingThrough = (() => {
       scrollTop = document.body.scrollTop || document.documentElement.scrollTop
       // position fixed会使滚动位置丢失，所以利用top定位
       document.body.style.position = 'fixed'
-      document.body.style.left = 0
-      document.body.style.right = 0
-      document.body.margin = 'auto'
+      document.body.style.left = '0'
+      document.body.style.right = '0'
+      document.body.style.margin = 'auto'
       document.body.style.top = `-${scrollTop}px`
     } else {
       // 恢复时，需要还原之前的滚动位置
       document.body.style.position = 'static'
-      document.body.style.top = '0px'
+      document.body.style.top = '0'
       window.scrollTo(0, scrollTop)
     }
   }
 })()
 
 @Component
-export default class SlimPopup extends Vue {
+export default class SlimPopup extends Mixins(c) {
   @Prop({ default: false }) private show!: boolean // .sync 是否显示
   @Prop({ default: false }) private hideOnMaskClick!: boolean // 点击遮罩是否关闭弹窗
   @Prop({ default: false }) private forceRenderOnShow!: boolean // 显示的时候是否重新渲染
@@ -87,6 +87,30 @@ export default class SlimPopup extends Vue {
     // preventBodyScroll
     if (this.preventBodyScroll) val ? preventRollingThrough(true) : preventRollingThrough(false)
   }
+
+  // 隐藏
+  @Emit('update:show')
+  hide () {
+    return false
+  }
+
+  // 遮罩点击 handle
+  @Emit('maskClick')
+  maskClick () {
+    this.hideOnMaskClick && this.hide()
+  }
+  // 弹窗点击 handle
+  @Emit('popupClick')
+  popupClick () {
+  }
+
+  // 阻止默认事件
+  preventDefault (e, type) {
+    if (this[`prevent${type}Touchmove`]) e.preventDefault()
+  }
+
+  // 阻止滚动穿透
+  preventRollingThrough
 }
 </script>
 
