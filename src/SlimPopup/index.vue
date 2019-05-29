@@ -31,7 +31,7 @@
 
 <script lang="ts">
 import { Component, Prop, Watch, Emit, Mixins } from 'vue-property-decorator'
-import c from './mixins'
+import C from './mixins'
 
 /**
  * 阻止滚动穿透
@@ -58,7 +58,7 @@ const preventRollingThrough = (() => {
 })()
 
 @Component
-export default class SlimPopup extends Mixins(c) {
+export default class SlimPopup extends Mixins(C) {
   @Prop({ default: false }) private show!: boolean // .sync 是否显示
   @Prop({ default: false }) private hideOnMaskClick!: boolean // 点击遮罩是否关闭弹窗
   @Prop({ default: false }) private forceRenderOnShow!: boolean // 显示的时候是否重新渲染
