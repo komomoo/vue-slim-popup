@@ -23,7 +23,7 @@
     "dev": "parcel demo/index.html -p 8080 --out-dir demo/dev",
     "build:demo": "rm -rf demo/dist/ && parcel build demo/index.html --out-dir demo/dist --public-url ./",
     "build": "dio",
-    "lint": "eslint --fix --ext .js,.ts,.vue ./src ./typings",
+    "lint": "eslint --fix --ext .js,.ts,.vue .",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:gen": "node scripts/docs-generate",
@@ -62,14 +62,13 @@
   "devDependencies": {
     "@babel/core": "^7.3.3",
     "@momoko/babel-preset-vue": "^1.0.0",
-    "@momoko/eslint-config-ts-vue": "^1.1.0",
-    "dio-bundler": "^0.4.0",
+    "@momoko/eslint-config-ts-vue": "^1.1.1",
+    "dio-bundler": "^0.5.2",
     "eslint": "^5.16.0",
     "parcel-bundler": "^1.11.0",
     "standard-version": "^4.4.0",
     "typescript": "^3.4.5",
-    "vue": "^2.6.10",
-    "vue-hot-reload-api": "^2.3.2",
-    "vue-template-compiler": "^2.6.10"
+    "vue": "^2.5.22",
+    "vue-hot-reload-api": "^2.3.2"
   }
 }
