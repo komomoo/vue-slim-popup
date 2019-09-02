@@ -1,25 +1,25 @@
 # vue-slim-popup
 
-> 开箱即用的 vue 移动端弹窗组件
+English | [简体中文](./README.zh-CN.md)
 
-## 🐠 示例&文档
+## 🌰 Example
 
 [Demo](https://wannaxiao.github.io/vue-slim-popup/demo/dist/)
 
-[Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
+[Demo Source Code](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
 
-## 🚀 快速开始
+## 🚀 QuickStart
 
-1.  安装 vue-slim-popup
+1.  Install
 
 ```bash
-yarn add vue-slim-popup # 或 npm i -S vue-slim-popup
+yarn add vue-slim-popup # OR npm i -S vue-slim-popup
 ```
 
-2.  引入 vue-slim-popup
+2.  Import
 
 ```js
-// *.vue 中
+// *.vue
 import SlimPopup from 'vue-slim-popup'
 export default {
   /* ... */
@@ -30,10 +30,10 @@ export default {
 }
 ```
 
-3.  使用它，请参考[Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
+3.  Usage. Please refer to the [Demo Source Code](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
 ```html
   <SlimPopup :show.sync="show">
-    <!-- 这里是一个插槽，可以放置任何元素 -->
+    <!-- this is a slot, here you can place any element -->
   </SlimPopup>
 ```
 
@@ -41,32 +41,33 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
+| Name | Description | Type | Default |
 | --- | --- | --- | --- |
-| show | .sync 是否显示 | Boolean | false |
-| hideOnMaskClick | 点击遮罩是否关闭弹窗 | Boolean | false |
-| forceRenderOnShow | 显示的时候是否重新渲染 | Boolean | false |
-| maskTransition | 遮罩动画 | String | slim-fade |
-| popupTransition | 弹窗动画，内置 'slim-scale-center', 'slim-zoom-center', 'slim-slide-top', 'slim-slide-bottom', 'slim-slide-left', 'slim-slide-right'。为空则根据 popupPosition 选用默认动画 | String | null |
-| maskClass | 遮罩的样式类 | Array | null |
-| popupClass | 弹窗的样式类 | Array | null |
-| maskStyle | 遮罩样式 | Object | null |
-| popupStyle | 弹窗样式 | Object | null |
-| popupPosition | 弹窗位置，可选 'center', 'top', 'bottom', 'left', 'right' | String | center |
-| preventMaskTouchmove | 阻止遮罩 touchmove 事件，阻止移动端滚动穿透 | Boolean | true |
-| preventPopupTouchmove | 阻止弹窗 touchmove 事件，阻止移动端滚动穿透（同时会导致弹窗区域无法滚动） | Boolean | true |
-| preventBodyScroll | 阻止 body 滚动，以间接的阻止滚动穿透（不会影响弹窗区域滚动）。开启此选项，关闭 preventPopupTouchmove，可达到弹窗区域可滚动，同时阻止滚动穿透的效果 | Boolean | false |
+| show | .sync | Boolean | false |
+| hideOnMaskClick | click on the mask to hide the popup | Boolean | false |
+| forceRenderOnShow | force render in the popup show | Boolean | false |
+| maskTransition | mask transition | String | slim-fade |
+| popupTransition | popup transition. Optional: 'slim-scale-center', 'slim-zoom-center', 'slim-slide-top', 'slim-slide-bottom', 'slim-slide-left', 'slim-slide-right'. If it is empty, select the default animation according to popupPosition | String | null |
+| maskClass | mask class | Array<String> | null |
+| popupClass | popup class | Array<String> | null |
+| maskStyle | mask style | Object | null |
+| popupStyle | popup style | Object | null |
+| popupPosition | popup position. Optional: 'center', 'top', 'bottom', 'left', 'right' | String | center |
+| preventMaskTouchmove | prevent touchmove event in the mask | Boolean | true |
+| preventPopupTouchmove | prevent touchmove event in the popup(it will cause the popup area to unable to scroll) | Boolean | true |
+| preventBodyScroll | prevent body scroll, indirect blocking the effect of scrolling through(popup area can to sroll). Enable this option and disable preventPopupTouchmove, you can scroll the popup area while blocking the effect of scrolling through | Boolean | false |
 
 ### Events
-事件名 | 说明 | 回调参数 |
+| Name | Description | Parameters |
 |---|---|---|
-maskClick | 遮罩区域被点击时 | undefined |
-popupClick | 弹窗区域自身被点击时 | undefined |
+| maskClick | mask area clicked | undefined |
+| popupClick | popup area self clicked | undefined |
 
+---
 
-<br>
-<br>
-😉😘 如果它对你有所帮助，可以点一下 <b>⭐️<a href="#">Star</a></b> ~
+😉😘 If it is helpful to you，please encourage me with a <b>⭐️<a href="#">Star</a></b> ~
+
+## [Changelog](./CHANGELOG.md)
 
 ## License
 
