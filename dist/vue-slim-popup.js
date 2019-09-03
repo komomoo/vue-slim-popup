@@ -1,5 +1,5 @@
-/**
- * vue-slim-popup v1.4.3
+/*!
+ * vue-slim-popup v1.4.4
  * Copyright (c) 2018-present, momoko <ko.momo@qq.com>
  * Released under the MIT License.
  */
@@ -1131,38 +1131,93 @@
 	var browser = createInjector;
 
 	/* script */
-	const __vue_script__ = script;
-
+	var __vue_script__ = script;
 	/* template */
-	var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.c()},[_c('transition',{attrs:{"name":_vm.maskTransition}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.show),expression:"show"}],class:[_vm.c('__mask') ].concat( _vm.maskClass),style:(_vm.maskStyle),on:{"click":_vm.maskClick,"touchmove":function($event){return _vm.preventDefault($event, 'Mask')}}})]),_vm._v(" "),_c('transition',{attrs:{"name":_vm.popupTransition || (_vm.popupPosition === 'center'? 'slim-scale-center': ("slim-slide-" + _vm.popupPosition))}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.show),expression:"show"}],ref:"popup",class:[_vm.c('__popup'), _vm.c(("__popup--" + _vm.popupPosition)) ].concat( _vm.popupClass),style:(_vm.popupStyle),on:{"click":function($event){if($event.target !== $event.currentTarget){ return null; }return _vm.popupClick($event)},"touchmove":function($event){return _vm.preventDefault($event, 'Popup')}}},[(_vm.popupBodyRenderState)?_vm._t("default"):_vm._e()],2)])],1)};
+
+	var __vue_render__ = function __vue_render__() {
+	  var _vm = this;
+
+	  var _h = _vm.$createElement;
+
+	  var _c = _vm._self._c || _h;
+
+	  return _c('div', {
+	    class: _vm.c()
+	  }, [_c('transition', {
+	    attrs: {
+	      "name": _vm.maskTransition
+	    }
+	  }, [_c('div', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: _vm.show,
+	      expression: "show"
+	    }],
+	    class: [_vm.c('__mask')].concat(_vm.maskClass),
+	    style: _vm.maskStyle,
+	    on: {
+	      "click": _vm.maskClick,
+	      "touchmove": function touchmove($event) {
+	        return _vm.preventDefault($event, 'Mask');
+	      }
+	    }
+	  })]), _vm._v(" "), _c('transition', {
+	    attrs: {
+	      "name": _vm.popupTransition || (_vm.popupPosition === 'center' ? 'slim-scale-center' : "slim-slide-" + _vm.popupPosition)
+	    }
+	  }, [_c('div', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: _vm.show,
+	      expression: "show"
+	    }],
+	    ref: "popup",
+	    class: [_vm.c('__popup'), _vm.c("__popup--" + _vm.popupPosition)].concat(_vm.popupClass),
+	    style: _vm.popupStyle,
+	    on: {
+	      "click": function click($event) {
+	        if ($event.target !== $event.currentTarget) {
+	          return null;
+	        }
+
+	        return _vm.popupClick($event);
+	      },
+	      "touchmove": function touchmove($event) {
+	        return _vm.preventDefault($event, 'Popup');
+	      }
+	    }
+	  }, [_vm.popupBodyRenderState ? _vm._t("default") : _vm._e()], 2)])], 1);
+	};
+
 	var __vue_staticRenderFns__ = [];
+	/* style */
 
-	  /* style */
-	  const __vue_inject_styles__ = function (inject) {
-	    if (!inject) return
-	    inject("data-v-0b00822c_0", { source: ".vue-slim-popup .slim-fade-enter-active,.vue-slim-popup .slim-fade-leave-active{opacity:1;transition:opacity ease-in .2s}.vue-slim-popup .slim-fade-enter,.vue-slim-popup .slim-fade-leave-to{opacity:0}.vue-slim-popup .slim-scale-center-enter-active{-webkit-animation:scaleIn .4s;animation:scaleIn .4s}.vue-slim-popup .slim-scale-center-leave-active{-webkit-animation:scaleOut .2s;animation:scaleOut .2s}.vue-slim-popup .slim-zoom-center-enter-active{opacity:1;transition:all ease .4s}.vue-slim-popup .slim-zoom-center-leave-active{opacity:1;transition:all ease .2s}.vue-slim-popup .slim-zoom-center-enter,.vue-slim-popup .slim-zoom-center-leave-to{-webkit-transform:scale(.6) translate3d(-50%,-50%,0);transform:scale(.6) translate3d(-50%,-50%,0);opacity:0}.vue-slim-popup .slim-slide-bottom-enter-active,.vue-slim-popup .slim-slide-left-enter-active,.vue-slim-popup .slim-slide-right-enter-active,.vue-slim-popup .slim-slide-top-enter-active{opacity:1;transition:all ease .4s}.vue-slim-popup .slim-slide-bottom-leave-active,.vue-slim-popup .slim-slide-left-leave-active,.vue-slim-popup .slim-slide-right-leave-active,.vue-slim-popup .slim-slide-top-leave-active{opacity:1;transition:all ease .2s}.vue-slim-popup .slim-slide-top-enter{-webkit-transform:translate3d(-50%,-100%,0);transform:translate3d(-50%,-100%,0);opacity:1}.vue-slim-popup .slim-slide-top-leave-to{-webkit-transform:translate3d(-50%,-100%,0);transform:translate3d(-50%,-100%,0);opacity:0}.vue-slim-popup .slim-slide-bottom-enter{-webkit-transform:translate3d(-50%,100%,0);transform:translate3d(-50%,100%,0);opacity:1}.vue-slim-popup .slim-slide-bottom-leave-to{-webkit-transform:translate3d(-50%,100%,0);transform:translate3d(-50%,100%,0);opacity:0}.vue-slim-popup .slim-slide-left-enter{-webkit-transform:translate3d(-100%,-50%,0);transform:translate3d(-100%,-50%,0);opacity:1}.vue-slim-popup .slim-slide-left-leave-to{-webkit-transform:translate3d(-100%,-50%,0);transform:translate3d(-100%,-50%,0);opacity:0}.vue-slim-popup .slim-slide-right-enter{-webkit-transform:translate3d(100%,-50%,0);transform:translate3d(100%,-50%,0);opacity:1}.vue-slim-popup .slim-slide-right-leave-to{-webkit-transform:translate3d(100%,-50%,0);transform:translate3d(100%,-50%,0);opacity:0}@-webkit-keyframes scaleIn{0%{-webkit-transform:scale(1.4) translate3d(-50%,-50%,0);transform:scale(1.4) translate3d(-50%,-50%,0);opacity:0}100%{-webkit-transform:scale(1) translate3d(-50%,-50%,0);transform:scale(1) translate3d(-50%,-50%,0);opacity:1}}@keyframes scaleIn{0%{-webkit-transform:scale(1.4) translate3d(-50%,-50%,0);transform:scale(1.4) translate3d(-50%,-50%,0);opacity:0}100%{-webkit-transform:scale(1) translate3d(-50%,-50%,0);transform:scale(1) translate3d(-50%,-50%,0);opacity:1}}@-webkit-keyframes scaleOut{0%{-webkit-transform:scale(1) translate3d(-50%,-50%,0);transform:scale(1) translate3d(-50%,-50%,0);opacity:1}100%{-webkit-transform:scale(.6) translate3d(-50%,-50%,0);transform:scale(.6) translate3d(-50%,-50%,0);opacity:0}}@keyframes scaleOut{0%{-webkit-transform:scale(1) translate3d(-50%,-50%,0);transform:scale(1) translate3d(-50%,-50%,0);opacity:1}100%{-webkit-transform:scale(.6) translate3d(-50%,-50%,0);transform:scale(.6) translate3d(-50%,-50%,0);opacity:0}}.vue-slim-popup__mask{position:fixed;z-index:999;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);-ms-touch-action:none;touch-action:none;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}.vue-slim-popup__popup{position:fixed;z-index:1000;margin:auto}.vue-slim-popup__popup--center{top:50%;right:auto;bottom:auto;left:50%;-webkit-transform:translate3d(-50%,-50%,0);transform:translate3d(-50%,-50%,0);-webkit-transform-origin:left top;-ms-transform-origin:left top;transform-origin:left top}.vue-slim-popup__popup--top{top:0;bottom:auto;left:50%;right:auto;-webkit-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0)}.vue-slim-popup__popup--bottom{top:auto;bottom:0;left:50%;right:auto;-webkit-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0)}.vue-slim-popup__popup--left{top:50%;bottom:auto;left:0;right:auto;-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0)}.vue-slim-popup__popup--right{top:50%;bottom:auto;left:auto;right:0;-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0)}", map: undefined, media: undefined });
+	var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
+	  if (!inject) return;
+	  inject("data-v-f97d71ec_0", {
+	    source: ".vue-slim-popup .slim-fade-enter-active,.vue-slim-popup .slim-fade-leave-active{opacity:1;transition:opacity ease-in .2s}.vue-slim-popup .slim-fade-enter,.vue-slim-popup .slim-fade-leave-to{opacity:0}.vue-slim-popup .slim-scale-center-enter-active{-webkit-animation:scaleIn .4s;animation:scaleIn .4s}.vue-slim-popup .slim-scale-center-leave-active{-webkit-animation:scaleOut .2s;animation:scaleOut .2s}.vue-slim-popup .slim-zoom-center-enter-active{opacity:1;transition:all ease .4s}.vue-slim-popup .slim-zoom-center-leave-active{opacity:1;transition:all ease .2s}.vue-slim-popup .slim-zoom-center-enter,.vue-slim-popup .slim-zoom-center-leave-to{-webkit-transform:scale(.6) translate3d(-50%,-50%,0);transform:scale(.6) translate3d(-50%,-50%,0);opacity:0}.vue-slim-popup .slim-slide-bottom-enter-active,.vue-slim-popup .slim-slide-left-enter-active,.vue-slim-popup .slim-slide-right-enter-active,.vue-slim-popup .slim-slide-top-enter-active{opacity:1;transition:all ease .4s}.vue-slim-popup .slim-slide-bottom-leave-active,.vue-slim-popup .slim-slide-left-leave-active,.vue-slim-popup .slim-slide-right-leave-active,.vue-slim-popup .slim-slide-top-leave-active{opacity:1;transition:all ease .2s}.vue-slim-popup .slim-slide-top-enter{-webkit-transform:translate3d(-50%,-100%,0);transform:translate3d(-50%,-100%,0);opacity:1}.vue-slim-popup .slim-slide-top-leave-to{-webkit-transform:translate3d(-50%,-100%,0);transform:translate3d(-50%,-100%,0);opacity:0}.vue-slim-popup .slim-slide-bottom-enter{-webkit-transform:translate3d(-50%,100%,0);transform:translate3d(-50%,100%,0);opacity:1}.vue-slim-popup .slim-slide-bottom-leave-to{-webkit-transform:translate3d(-50%,100%,0);transform:translate3d(-50%,100%,0);opacity:0}.vue-slim-popup .slim-slide-left-enter{-webkit-transform:translate3d(-100%,-50%,0);transform:translate3d(-100%,-50%,0);opacity:1}.vue-slim-popup .slim-slide-left-leave-to{-webkit-transform:translate3d(-100%,-50%,0);transform:translate3d(-100%,-50%,0);opacity:0}.vue-slim-popup .slim-slide-right-enter{-webkit-transform:translate3d(100%,-50%,0);transform:translate3d(100%,-50%,0);opacity:1}.vue-slim-popup .slim-slide-right-leave-to{-webkit-transform:translate3d(100%,-50%,0);transform:translate3d(100%,-50%,0);opacity:0}@-webkit-keyframes scaleIn{0%{-webkit-transform:scale(1.4) translate3d(-50%,-50%,0);transform:scale(1.4) translate3d(-50%,-50%,0);opacity:0}100%{-webkit-transform:scale(1) translate3d(-50%,-50%,0);transform:scale(1) translate3d(-50%,-50%,0);opacity:1}}@keyframes scaleIn{0%{-webkit-transform:scale(1.4) translate3d(-50%,-50%,0);transform:scale(1.4) translate3d(-50%,-50%,0);opacity:0}100%{-webkit-transform:scale(1) translate3d(-50%,-50%,0);transform:scale(1) translate3d(-50%,-50%,0);opacity:1}}@-webkit-keyframes scaleOut{0%{-webkit-transform:scale(1) translate3d(-50%,-50%,0);transform:scale(1) translate3d(-50%,-50%,0);opacity:1}100%{-webkit-transform:scale(.6) translate3d(-50%,-50%,0);transform:scale(.6) translate3d(-50%,-50%,0);opacity:0}}@keyframes scaleOut{0%{-webkit-transform:scale(1) translate3d(-50%,-50%,0);transform:scale(1) translate3d(-50%,-50%,0);opacity:1}100%{-webkit-transform:scale(.6) translate3d(-50%,-50%,0);transform:scale(.6) translate3d(-50%,-50%,0);opacity:0}}.vue-slim-popup__mask{position:fixed;z-index:999;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);-ms-touch-action:none;touch-action:none}.vue-slim-popup__popup{position:fixed;z-index:1000;margin:auto}.vue-slim-popup__popup--center{top:50%;right:auto;bottom:auto;left:50%;-webkit-transform:translate3d(-50%,-50%,0);transform:translate3d(-50%,-50%,0);-webkit-transform-origin:left top;-ms-transform-origin:left top;transform-origin:left top}.vue-slim-popup__popup--top{top:0;bottom:auto;left:50%;right:auto;-webkit-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0)}.vue-slim-popup__popup--bottom{top:auto;bottom:0;left:50%;right:auto;-webkit-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0)}.vue-slim-popup__popup--left{top:50%;bottom:auto;left:0;right:auto;-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0)}.vue-slim-popup__popup--right{top:50%;bottom:auto;left:auto;right:0;-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0)}",
+	    map: undefined,
+	    media: undefined
+	  });
+	};
+	/* scoped */
 
-	  };
-	  /* scoped */
-	  const __vue_scope_id__ = undefined;
-	  /* module identifier */
-	  const __vue_module_identifier__ = undefined;
-	  /* functional template */
-	  const __vue_is_functional_template__ = false;
-	  /* style inject SSR */
-	  
 
-	  
-	  var SlimPopup = normalizeComponent_1(
-	    { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
-	    __vue_inject_styles__,
-	    __vue_script__,
-	    __vue_scope_id__,
-	    __vue_is_functional_template__,
-	    __vue_module_identifier__,
-	    browser,
-	    undefined
-	  );
+	var __vue_scope_id__ = undefined;
+	/* module identifier */
+
+	var __vue_module_identifier__ = undefined;
+	/* functional template */
+
+	var __vue_is_functional_template__ = false;
+	/* style inject SSR */
+
+	var SlimPopup = normalizeComponent_1({
+	  render: __vue_render__,
+	  staticRenderFns: __vue_staticRenderFns__
+	}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, browser, undefined);
 
 	SlimPopup.install = function (Vue) {
 	  Vue.component(SlimPopup.name, SlimPopup);
