@@ -193,7 +193,7 @@ $ = vue-slim-popup
     right 0
     background rgba(0, 0, 0, 0.6)
     touch-action none
-    backdrop-filter blur(5px)
+    // backdrop-filter blur(5px)
   }
 
   &__popup {
