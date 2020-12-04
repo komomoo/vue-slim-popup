@@ -4,6 +4,8 @@
 
 ## 🌰 示例
 
+<img src="./demo/assets/qrcode.png" width="200" style="margin-top: 20px;">
+
 [Demo](https://wannaxiao.github.io/vue-slim-popup/demo/dist/)
 
 [Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)

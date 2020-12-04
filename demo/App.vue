@@ -156,6 +156,13 @@ html, body {
       height 200px
       overflow-y scroll
       -webkit-overflow-scrolling touch
+      & {
+        display block
+      }
+    }
+
+    > h2 {
+      padding 0 20px
     }
 
     .open-btn, .close-btn {

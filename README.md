@@ -4,6 +4,8 @@ English | [简体中文](./README.zh-CN.md)
 
 ## 🌰 Example
 
+<img src="./demo/assets/qrcode.png" width="200" style="margin-top: 20px;">
+
 [Demo](https://wannaxiao.github.io/vue-slim-popup/demo/dist/)
 
 [Demo Source Code](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
