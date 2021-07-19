@@ -1,5 +1,7 @@
 # vue-slim-popup
 
+> 稳定性：经历过各类大型活动页面验证
+
 [English](./README.md) | 简体中文
 
 ## 🌰 示例

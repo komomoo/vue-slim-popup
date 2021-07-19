@@ -1,5 +1,7 @@
 # vue-slim-popup
 
+> Stability: Experienced various large-scale event page verification
+
 English | [简体中文](./README.zh-CN.md)
 
 ## 🌰 Example
