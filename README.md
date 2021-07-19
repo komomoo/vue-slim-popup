@@ -2,6 +2,8 @@
 
 English | [简体中文](./README.zh-CN.md)
 
+## ✨ Feature
+* Solve the mobile terminal scroll penetration
 * Stability: Experienced various large-scale event page verification
 
 ## 🌰 Example
