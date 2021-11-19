@@ -10,9 +10,9 @@
 
 <img src="./demo/assets/qrcode.png" width="200" style="margin-top: 20px;">
 
-[Demo](https://wannaxiao.github.io/vue-slim-popup/demo/dist/)
+[Demo](https://komomoo.github.io/vue-slim-popup/demo/dist/)
 
-[Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
+[Demo 示例代码](https://github.com/komomoo/vue-slim-popup/blob/master/demo/App.vue)
 
 ## 🚀 快速开始
 
@@ -36,7 +36,7 @@ export default {
 }
 ```
 
-3.  使用它，请参考[Demo 示例代码](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
+3.  使用它，请参考[Demo 示例代码](https://github.com/komomoo/vue-slim-popup/blob/master/demo/App.vue)
 ```html
   <SlimPopup :show.sync="show">
     <!-- 这里是一个插槽，可以放置任何元素 -->
@@ -79,4 +79,4 @@ popupClick | 弹窗区域自身被点击时 | undefined |
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2018-present, momoko
+Copyright (c) 2018-present, komo

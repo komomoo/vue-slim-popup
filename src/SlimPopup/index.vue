@@ -1,6 +1,6 @@
 /**
  * vue-slim-popup
- * @Author momoko
+ * @Author komo
  * @Date 2018/07
  */
 

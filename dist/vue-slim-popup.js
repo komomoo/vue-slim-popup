@@ -1,6 +1,6 @@
 /**
  * vue-slim-popup v1.4.4
- * Copyright (c) 2018-present, momoko <ko.momo@qq.com>
+ * Copyright (c) 2018-present, komo <ko.momo@qq.com>
  * Released under the MIT License.
  */
 

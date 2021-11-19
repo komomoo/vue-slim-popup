@@ -10,9 +10,9 @@ English | [简体中文](./README.zh-CN.md)
 
 <img src="./demo/assets/qrcode.png" width="200" style="margin-top: 20px;">
 
-[Demo](https://wannaxiao.github.io/vue-slim-popup/demo/dist/)
+[Demo](https://komomoo.github.io/vue-slim-popup/demo/dist/)
 
-[Demo Source Code](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
+[Demo Source Code](https://github.com/komomoo/vue-slim-popup/blob/master/demo/App.vue)
 
 ## 🚀 QuickStart
 
@@ -36,7 +36,7 @@ export default {
 }
 ```
 
-3.  Usage. Please refer to the [Demo Source Code](https://github.com/wannaxiao/vue-slim-popup/blob/master/demo/App.vue)
+3.  Usage. Please refer to the [Demo Source Code](https://github.com/komomoo/vue-slim-popup/blob/master/demo/App.vue)
 ```html
   <SlimPopup :show.sync="show">
     <!-- this is a slot, here you can place any element -->
@@ -79,4 +79,4 @@ export default {
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2018-present, momoko
+Copyright (c) 2018-present, komo

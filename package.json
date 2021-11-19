@@ -2,12 +2,12 @@
   "name": "vue-slim-popup",
   "version": "1.4.4",
   "description": "💇 开箱即用的 vue 移动端弹窗组件",
-  "author": "momoko <ko.momo@qq.com>",
+  "author": "komo <ko.momo@qq.com>",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/wannaxiao/vue-slim-popup"
+    "url": "https://github.com/komomoo/vue-slim-popup"
   },
   "keywords": [
     "vue",
